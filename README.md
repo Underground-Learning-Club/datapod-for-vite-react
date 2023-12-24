@@ -1,30 +1,11 @@
-# React + TypeScript + Vite
+# datapod-for-vite-react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Datapod for Vite React** is a light-weight, self-contained web framework with which you can create fast database-powered web applications with user login, self-validating forms, easy-to-create pages. 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Datapod** itself is a framework-agnostic, flexible and strongly-typed approach to data management, a project I have been pursuing for over a decade in various languages and frameworks, here are some extant historical relics of some of my various Datapod projects:
+    https://tanguay.info/datapod - the original idea of Datapod
+    https://tanguay.info/dpwpf/screenshots.php - Datapod for WPF from 2009
+    https://tanguay.info/dpphp_01000 - Datapod for PHP from 2011
+    https://tanguay.info/dpphp - Datapod for PHP from 2014
+    https://dpodreact.netlify.app - Datapod for React from 2021 
+    https://github.com/edwardtanguay/n49901_dpn - Datapod for Node/Express from 2020
