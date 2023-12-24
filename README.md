@@ -1,6 +1,4 @@
-# datapod-for-vite-react
-
-## Datapod for Vite React
+# Datapod for Vite React
 
 is a light-weight, self-contained web framework with which you can create fast database-powered web applications with user login, self-validating forms, easy-to-create pages. 
 
