@@ -1,5 +1,5 @@
 export const PageWelcome = () => {
 	return (
-		<p>This is the welcome page.</p>
+		<p>Welcome to this site.</p>
 	)
 }
