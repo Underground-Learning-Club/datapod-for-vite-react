@@ -6,6 +6,11 @@ export const readJsonFile = (filePath: string) => {
 	return jsonObject;
 };
 
+export const readTextFile = (filePath: string) => {
+	const text = fs.readFileSync(filePath, "utf8");
+	return text;
+};
+
 export const getFileNamesInDirectory = (directory: string) => {
 	const fileNames: string[] = [];
 	if (fs.existsSync(directory)) {

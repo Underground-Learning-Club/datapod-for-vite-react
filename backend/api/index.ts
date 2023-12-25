@@ -1,7 +1,7 @@
 import express from 'express';
 import * as config from '../config.js';
 import cors from 'cors';
-import { IAppData } from '../../src/interfaces.js';
+import { IAppData, IFileObject } from '../../src/interfaces.js';
 import { getFileNamesInDirectory } from '../backendTools.js';
 
 const app = express();
@@ -13,11 +13,20 @@ app.get('/', (_req, res) => {
 
 app.get('/appdata', (_req, res) => {
 
+	const pathAndFileNames = getFileNamesInDirectory('src/data');
+	const fileObjects = [] as IFileObject[];
+	for (const pathAndFileName of pathAndFileNames) {
+		fileObjects.push({
+			pathAndFileName,
+			content: 'nnn'
+		})
+	}
+
 	const appData: IAppData = {
 		appIdCode: config.appIdCode(),
 		frontendPort: config.frontendPort(),
 		backendPort: config.backendPort(),
-		dataPathAndFileNames: getFileNamesInDirectory('src/data')
+		fileObjects
 	}
 	res.status(200).json(appData);
 });

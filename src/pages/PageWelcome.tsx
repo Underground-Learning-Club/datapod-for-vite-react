@@ -11,9 +11,11 @@ export const PageWelcome = () => {
 			<p>backend port: {appData.backendPort}</p>
 			<p>data files:</p>
 			<ul className="list-disc ml-6">
-				{appData.dataPathAndFileNames.map(
-					(dataPathAndFileName, index) => {
-						return <li key={index}>{dataPathAndFileName}</li>;
+				{appData.fileObjects.map(
+					(fileObject, index) => {
+						return <li key={index}>{fileObject.pathAndFileName}
+							<textarea className="block mb-3">{fileObject.content}</textarea>
+						</li>;
 					}
 				)}
 			</ul>
