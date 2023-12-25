@@ -8,8 +8,10 @@
 	- x getEntireContent
 	- x add appdata link
 	- x show entireContent
-	- .. create entireContent
-	- .. show instead: schemas and items
+	- x create entireContent
+	- .. switch to share and qtools
+	- .. create DatapodManager
+	- .. show schemas and items
 	- .. make infrastructure to pass (1) file name and (2) number of lines to frontend via appData
 	- parse data into items
 - backend sends this data in appData

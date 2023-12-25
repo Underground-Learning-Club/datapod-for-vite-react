@@ -1,5 +1,11 @@
 import { IFileObject } from "../src/interfaces.js";
-import * as btools from './backendTools.js';
+import * as qfil from './qtools/qfil.js';
+
+export const extractPortNumber = (text: string) => {
+	const regex = /(\d+)/;
+	const match = text.match(regex);
+	return match ? parseInt(match[0], 10) : 0;
+}
 
 /**
  * getFileObjects
@@ -12,7 +18,7 @@ export const getFileObjects = (pathAndFileNames: string[]): IFileObject[] => {
 	for (const pathAndFileName of pathAndFileNames) {
 		fileObjects.push({
 			pathAndFileName,
-			content: btools.readTextFile('src/data/' + pathAndFileName)
+			content: qfil.readTextFile('src/data/' + pathAndFileName)
 		})
 	}
 	return fileObjects;
@@ -31,3 +37,4 @@ export const getEntireContent = (fileObjects: IFileObject[]): string => {
 	}
 	return r;
 }
+

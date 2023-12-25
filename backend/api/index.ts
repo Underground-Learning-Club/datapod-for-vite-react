@@ -1,9 +1,9 @@
 import express from 'express';
-import * as config from '../config.js';
 import cors from 'cors';
 import { IAppData } from '../../src/interfaces.js';
-import * as btools from '../backendTools.js';
-import * as bdtools from '../backendDpodTools.js';
+import * as qfil from '../../share/qtools/qfil.js';
+import * as apptools from '../../share/apptools.js';
+import * as appconfig from '../../share/appconfig.js';
 
 const app = express();
 app.use(cors());
@@ -14,25 +14,25 @@ app.get('/', (_req, res) => {
 
 app.get('/appdata', (_req, res) => {
 
-	const pathAndFileNames = btools.getFileNamesInDirectory('src/data');
-	const fileObjects = bdtools.getFileObjects(pathAndFileNames);
-	const entireContent = bdtools.getEntireContent(fileObjects);
+	const pathAndFileNames = qfil.getFileNamesInDirectory('src/data');
+	const fileObjects = apptools.getFileObjects(pathAndFileNames);
+	const entireContent = apptools.getEntireContent(fileObjects);
 
 	const appData: IAppData = {
-		appIdCode: config.appIdCode(),
-		frontendPort: config.frontendPort(),
-		backendPort: config.backendPort(),
+		appIdCode: appconfig.appIdCode(),
+		frontendPort: appconfig.frontendPort(),
+		backendPort: appconfig.backendPort(),
 		fileObjects,
 		entireContent
 	}
 	res.status(200).json(appData);
 });
 
-app.listen(config.backendPort(), () => {
+app.listen(appconfig.backendPort(), () => {
 	console.log(`---
-APP: ${config.appIdCode()}
-FRONTEND URL: http://localhost:${config.frontendPort()}
-BACKEND URL: http://localhost:${config.backendPort()}
-BACKEND APP DATA: http://localhost:${config.backendPort()}/appdata
+APP: ${appconfig.appIdCode()}
+FRONTEND URL: http://localhost:${appconfig.frontendPort()}
+BACKEND URL: http://localhost:${appconfig.backendPort()}
+BACKEND APP DATA: http://localhost:${appconfig.backendPort()}/appdata
 `);
 });

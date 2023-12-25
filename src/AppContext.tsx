@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { IAppData, blankAppData } from "./interfaces";
-import * as config from "../backend/config";
+import * as appconfig from '../share/appconfig';
 import axios from 'axios';
 
 interface IAppContext {
@@ -13,7 +13,7 @@ interface IAppProvider {
 
 export const AppContext = createContext<IAppContext>({} as IAppContext);
 
-const backendUrl = `http://localhost:${config.backendPort()}/appData`;
+const backendUrl = `http://localhost:${appconfig.backendPort()}/appData`;
 
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [appData, setAppData] = useState<IAppData>(blankAppData);
