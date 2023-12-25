@@ -6,8 +6,13 @@ export const PageWelcome = () => {
 
 	return (
 		<>
-			<p>Welcome to this site.</p>
-			{appData && <p>App ID-Code: {appData.appIdCode}</p>}
+			{appData && (
+				<>
+					<p>App ID-Code: {appData.appIdCode}</p>
+					<p>frontend port: {appData.frontendPort}</p>
+					<p>backend port: {appData.backendPort}</p>
+				</>
+			)}
 		</>
 	);
 };
