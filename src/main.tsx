@@ -11,6 +11,7 @@ import { Page404 } from "./pages/Page404.tsx";
 import { AppProvider } from "./AppContext.tsx";
 import { PageFiles } from "./pages/PageFiles.tsx";
 import { PageEntireContent } from "./pages/PageEntireContent.tsx";
+import { PageDatapodContent } from "./pages/PageDatapodContent.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
 			{
 				path: "entire-content",
 				element: <PageEntireContent />,
+			},
+			{
+				path: "datapod-content",
+				element: <PageDatapodContent />,
 			},
 			{
 				path: "/",
