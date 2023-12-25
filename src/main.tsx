@@ -7,10 +7,10 @@ import {
 } from "react-router-dom";
 import "./index.scss";
 import { PageWelcome } from "./pages/PageWelcome.tsx";
-import { PageAbout } from "./pages/PageAbout.tsx";
 import { Page404 } from "./pages/Page404.tsx";
 import { AppProvider } from "./AppContext.tsx";
 import { PageFiles } from "./pages/PageFiles.tsx";
+import { PageMainContent } from "./pages/PageMainContent.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
 				element: <PageFiles />,
 			},
 			{
-				path: "about",
-				element: <PageAbout />,
+				path: "main-content",
+				element: <PageMainContent />,
 			},
 			{
 				path: "/",
