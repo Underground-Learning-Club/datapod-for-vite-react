@@ -9,8 +9,9 @@
 	- x add appdata link
 	- x show entireContent
 	- x create entireContent
-	- .. switch to share and qtools
+	- x switch to share and qtools
 	- .. create DatapodManager
+		- .. mock with lines
 	- .. show schemas and items
 	- .. make infrastructure to pass (1) file name and (2) number of lines to frontend via appData
 	- parse data into items
