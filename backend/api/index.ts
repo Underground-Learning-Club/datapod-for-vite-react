@@ -33,5 +33,6 @@ app.listen(config.backendPort(), () => {
 APP: ${config.appIdCode()}
 FRONTEND URL: http://localhost:${config.frontendPort()}
 BACKEND URL: http://localhost:${config.backendPort()}
+BACKEND APP DATA: http://localhost:${config.backendPort()}/appdata
 `);
 });
