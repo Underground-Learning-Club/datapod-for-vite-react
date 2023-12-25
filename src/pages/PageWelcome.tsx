@@ -6,7 +6,7 @@ export const PageWelcome = () => {
 
 	return (
 		<>
-			{appData && appData.dataPathAndFileNames && (
+			{appData && (
 				<>
 					<p>App ID-Code: {appData.appIdCode}</p>
 					<p>frontend port: {appData.frontendPort}</p>

@@ -8,5 +8,6 @@ export interface IAppData {
 export const blankAppData = {
 	appIdCode: 'nnn',
 	frontendPort: 0,
-	backendPort: 0
+	backendPort: 0,
+	dataPathAndFileNames: []
 }
