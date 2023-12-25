@@ -4,11 +4,21 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite --port 3040 --open",
+		"dev": "run-p api frontend",
+		"api": "nodemon",
+		"frontend": "vite --port 3040 --open",
 		"build": "tsc && vite build",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
+	},
+	"nodemonConfig": {
+		"watch": [
+			"backend",
+			"package.json"
+		],
+		"ext": "ts",
+		"exec": "tsx backend/api/index.ts"
 	},
 	"dependencies": {
 		"cors": "^2.8.5",
@@ -30,6 +40,7 @@
 		"eslint": "^8.45.0",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-react-refresh": "^0.4.3",
+		"nodemon": "^3.0.2",
 		"postcss": "^8.4.31",
 		"prettier": "^3.0.3",
 		"sass": "^1.69.5",
