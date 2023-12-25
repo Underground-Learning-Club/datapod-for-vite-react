@@ -2,6 +2,7 @@ export interface IAppData {
 	appIdCode: string;
 	frontendPort: number;
 	backendPort: number;
+	dataPathAndFileNames: string[];
 }
 
 export const blankAppData = {

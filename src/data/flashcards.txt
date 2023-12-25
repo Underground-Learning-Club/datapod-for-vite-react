@@ -1,0 +1,11 @@
+**Flashcards
+Front
+Back
+
+==flashcard
+the house
+das Haus
+
+==flashcard
+the mouse
+die Maus

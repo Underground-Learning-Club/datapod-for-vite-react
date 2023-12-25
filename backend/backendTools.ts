@@ -5,3 +5,16 @@ export const readJsonFile = (filePath: string) => {
 	const jsonObject = JSON.parse(jsonData);
 	return jsonObject;
 };
+
+export const getFileNamesInDirectory = (directory: string) => {
+	const fileNames: string[] = [];
+	if (fs.existsSync(directory)) {
+		fs.readdirSync(directory).forEach((fileName: string) => {
+			const relativePathAndFileName = directory + "/" + fileName;
+			if (!fs.lstatSync(relativePathAndFileName).isDirectory()) {
+				fileNames.push(fileName);
+			}
+		});
+	}
+	return fileNames;
+}

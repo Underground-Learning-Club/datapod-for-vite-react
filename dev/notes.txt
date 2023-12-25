@@ -2,7 +2,9 @@
 - .. make basic DpodParser class to parse line-only items from .txt files in the /data directory
 	- x add dpod data to the data directory
 	- x first just a simple appData
-	- .. show appidcode with appcontext
+	- x show appidcode with appcontext
+	- x list files that are in directory
+	- .. make appDataIsLoaded
 	- .. make infrastructure to pass (1) file name and (2) number of lines to frontend via appData
 	- parse data into items
 - backend sends this data in appData
