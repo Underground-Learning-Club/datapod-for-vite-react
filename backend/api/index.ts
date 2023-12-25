@@ -3,7 +3,7 @@ import * as config from '../config.js';
 import cors from 'cors';
 import { IAppData } from '../../src/interfaces.js';
 import * as btools from '../backendTools.js';
-import { getFileObjects } from '../backendDpodTools.js';
+import * as bdtools from '../backendDpodTools.js';
 
 const app = express();
 app.use(cors());
@@ -15,13 +15,15 @@ app.get('/', (_req, res) => {
 app.get('/appdata', (_req, res) => {
 
 	const pathAndFileNames = btools.getFileNamesInDirectory('src/data');
-	const fileObjects = getFileObjects(pathAndFileNames);
+	const fileObjects = bdtools.getFileObjects(pathAndFileNames);
+	const entireContent = bdtools.getEntireContent(fileObjects);
 
 	const appData: IAppData = {
 		appIdCode: config.appIdCode(),
 		frontendPort: config.frontendPort(),
 		backendPort: config.backendPort(),
-		fileObjects
+		fileObjects,
+		entireContent
 	}
 	res.status(200).json(appData);
 });

@@ -8,6 +8,7 @@ export interface IAppData {
 	frontendPort: number;
 	backendPort: number;
 	fileObjects: IFileObject[];
+	entireContent: string;
 }
 
 export const blankAppData = {
