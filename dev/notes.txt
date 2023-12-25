@@ -4,6 +4,7 @@
 	- x first just a simple appData
 	- x show appidcode with appcontext
 	- x list files that are in directory
+	- .. info to files
 	- .. show instead: schemas and items
 	- .. make infrastructure to pass (1) file name and (2) number of lines to frontend via appData
 	- parse data into items
