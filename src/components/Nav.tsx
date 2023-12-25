@@ -5,7 +5,7 @@ export const Nav = () => {
 		<ul className="flex gap-4 bg-gray-500 px-4 py-2 content">
 			<li><NavLink to="/welcome">Welcome</NavLink></li>
 			<li><NavLink to="/files">Files</NavLink></li>
-			<li><NavLink to="/main-content">Main Content</NavLink></li>
+			<li><NavLink to="/entire-content">Entire Content</NavLink></li>
 		</ul>
 	</nav>;
 };
