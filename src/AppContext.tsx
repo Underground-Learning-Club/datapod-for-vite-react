@@ -13,7 +13,6 @@ export const AppContext = createContext<IAppContext>({} as IAppContext);
 
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [appData] = useState<IAppData>(blankAppData);
-
 	
 	return (
 		<AppContext.Provider
