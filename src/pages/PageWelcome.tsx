@@ -6,19 +6,9 @@ export const PageWelcome = () => {
 
 	return (
 		<>
-			<p>App ID-Code: {appData.appIdCode}</p>
-			<p>frontend port: {appData.frontendPort}</p>
-			<p>backend port: {appData.backendPort}</p>
-			<p>data files:</p>
-			<ul className="list-disc ml-6">
-				{appData.fileObjects.map(
-					(fileObject, index) => {
-						return <li key={index}><span className="font-mono font-semibold">{fileObject.pathAndFileName}</span>
-							<textarea className="block mb-3 w-1/2 h-48 p-3 font-mono text-xs text-orange-700">{fileObject.content}</textarea>
-						</li>;
-					}
-				)}
-			</ul>
+			<p className="h-7"><span className="font-semibold">App ID-Code:</span> <code>{appData.appIdCode}</code></p>
+			<p className="h-7"><span className="font-semibold">frontend port:</span> <code>{appData.frontendPort}</code></p>
+			<p className="h-7"><span className="font-semibold">backend port:</span> <code>{appData.backendPort}</code></p>
 		</>
 	);
 };

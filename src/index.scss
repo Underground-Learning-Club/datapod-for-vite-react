@@ -6,6 +6,9 @@
 	h1 {
 		font-variant: small-caps;
 	}
+	code {
+		@apply text-orange-800 bg-gray-300 p-1 text-xs;
+	}
 }
 
 a.active {
