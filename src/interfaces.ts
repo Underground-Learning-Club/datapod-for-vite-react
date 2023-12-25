@@ -15,5 +15,6 @@ export const blankAppData = {
 	appIdCode: 'nnn',
 	frontendPort: 0,
 	backendPort: 0,
-	fileObjects: []
+	fileObjects: [],
+	entireContent: ''
 }

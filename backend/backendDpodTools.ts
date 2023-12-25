@@ -24,5 +24,7 @@ export const getFileObjects = (pathAndFileNames: string[]): IFileObject[] => {
  * 
  */
 export const getEntireContent = (fileObjects: IFileObject[]): string => {
-	return `entire content with ${fileObjects.length} files`;
+	let r = '';
+	r += 'nnn222';
+	return r;
 }
