@@ -1,6 +1,7 @@
 - x recreate site from createBrowserRouter
 - .. make basic DpodParser class to parse line-only items from .txt files in the /data directory
 	- x add dpod data to the data directory
+	- .. first just a simple appData
 	- .. make infrastructure to pass (1) file name and (2) number of lines to frontend via appData
 	- parse data into items
 - backend sends this data in appData
