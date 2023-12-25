@@ -25,6 +25,9 @@ export const getFileObjects = (pathAndFileNames: string[]): IFileObject[] => {
  */
 export const getEntireContent = (fileObjects: IFileObject[]): string => {
 	let r = '';
-	r += 'nnn222';
+	for (const fileObject of fileObjects) {
+		r += fileObject.content;
+	r += '\n\n'
+	}
 	return r;
 }
