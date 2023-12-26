@@ -10,9 +10,9 @@
 	- x show entireContent
 	- x create entireContent
 	- x switch to share and qtools
-	- .. new page: "Datapod Content"
-	- .. mock with lines
+	- x new page: "Datapod Content"
 	- .. create DatapodManager
+		- .. make line blocks
 	- .. show schemas and items
 	- .. make infrastructure to pass (1) file name and (2) number of lines to frontend via appData
 	- parse data into items

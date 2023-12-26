@@ -13,8 +13,7 @@ export const PageFiles = () => {
 							<span className="font-mono font-semibold">
 								{fileObject.pathAndFileName}
 							</span>
-							<textarea className="block mb-3 w-1/2 h-48 p-3 font-mono text-xs text-orange-700">
-								{fileObject.content}
+							<textarea value={fileObject.content} readOnly className="block mb-3 w-1/2 h-48 p-3 font-mono text-xs text-orange-700">
 							</textarea>
 						</li>
 					);
