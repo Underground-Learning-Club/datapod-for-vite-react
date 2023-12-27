@@ -14,6 +14,7 @@ export interface IAppData {
 	fileObjects: IFileObject[];
 	entireContent: string;
 	lineBlockDataItems: ILineBlockDataItem[];
+	dpodSchemaNumber: number;
 }
 
 export const blankAppData = {

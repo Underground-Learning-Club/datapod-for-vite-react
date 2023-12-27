@@ -8,13 +8,13 @@ export const PageImport = () => {
 	return (
 		<div className="pageImport">
 
-			<h2>4. Datapod items created</h2>
+			<h2>4. Datapod content imported</h2>
 			<div className="ml-6">
-coming...
+				Number of schemas: {appData.dpodSchemaNumber}
 			</div>
 			
 
-			<h2>3. Line blocks created</h2>
+			<h2>3. Line blocks imported</h2>
 			<div className="ml-6">
 				<p className="mb-3">
 					Number of LineBlocks: {appData.lineBlockDataItems.length}

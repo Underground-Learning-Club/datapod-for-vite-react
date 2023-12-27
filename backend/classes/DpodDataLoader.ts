@@ -64,8 +64,13 @@ export class DpodDataLoader {
 			if (lineBlockKind === 'schema') {
 				const dpodSchema = new DpodSchema(lineBlock)
 				this.dpodSchemas.push(dpodSchema);
+				console.log('pushed');
 			}
 		}
+	}
+
+	public getDpodSchemas() {
+		return this.dpodSchemas
 	}
 
 }

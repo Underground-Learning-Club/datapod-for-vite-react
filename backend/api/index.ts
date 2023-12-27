@@ -26,7 +26,8 @@ app.get('/appdata', (_req, res) => {
 		backendPort: appconfig.backendPort(),
 		fileObjects,
 		entireContent,
-		lineBlockDataItems: dpodDataLoader.getLineBlockDataItems()
+		lineBlockDataItems: dpodDataLoader.getLineBlockDataItems(),
+		dpodSchemaNumber: dpodDataLoader.getDpodSchemas().length
 	}
 	res.status(200).json(appJsonData);
 });
