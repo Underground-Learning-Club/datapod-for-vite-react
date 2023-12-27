@@ -4,30 +4,48 @@ import { LineBlock } from './LineBlock';
 export class DpodDataLoader {
 	private content = '';
 	private lines: string[] = [];
+	private lineBlocks: LineBlock[] = [];
 
 	constructor(content: string) {
-		console.log('in constr');
 		this.content = content;
 		this.createLines();
 		this.createLineBlocks();
 	}
 
-	createLines() {
+	public getLineBlocks() {
+		return this.lineBlocks;
+	}
+
+	private createLines() {
 		this.lines = qstr.convertStringBlockToLines(this.content);
 	}
 
-	createLineBlocks() {
+	private createLineBlocks() {
 		let lineBlock = new LineBlock();
-		console.log('here');
+		let isRecordingLineBlock = false;
 		for (const line of this.lines) {
-			if (qstr.isEmpty(line)) {
+
+			// ignore empty lines in file
+			if (!isRecordingLineBlock && qstr.isEmpty(line)) {
 				continue;
 			}
-			// console.log(line);
-		}
-	}
 
-	getNumberOfLines() {
-		return this.lines.length;
+			// we need to start recording a line block again
+			if (!isRecordingLineBlock && !qstr.isEmpty(line)) {
+				lineBlock = new LineBlock();
+				isRecordingLineBlock = true;
+			}
+
+			// we are recording a line block and we need to add the current line
+			if (isRecordingLineBlock && !qstr.isEmpty(line)) {
+				lineBlock.addLine(line);
+			}
+
+			// we need to finish recording a line block
+			if (isRecordingLineBlock && qstr.isEmpty(line)) {
+				this.lineBlocks.push(lineBlock);
+				isRecordingLineBlock = false;
+			}
+		}
 	}
 }

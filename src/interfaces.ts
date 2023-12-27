@@ -1,3 +1,5 @@
+import { LineBlock } from "./classes/LineBlock";
+
 export interface IFileObject {
 	pathAndFileName: string;
 	content: string;
@@ -9,6 +11,7 @@ export interface IAppData {
 	backendPort: number;
 	fileObjects: IFileObject[];
 	entireContent: string;
+	lineBlocks: LineBlock[];
 }
 
 export const blankAppData = {
@@ -16,5 +19,6 @@ export const blankAppData = {
 	frontendPort: 0,
 	backendPort: 0,
 	fileObjects: [],
-	entireContent: ''
+	entireContent: '',
+	lineBlocks: []
 }
