@@ -22,10 +22,11 @@
 		- x make line blocks
 		- x make notation page work
 		- x implement single/plural with notation page
+		- .. change /data to /import
 		- .. create array of schemaDataItems, dataItems
 		- .. record and show schemas and items
+		- make import page
 		- notation page: show all variations with singular/plural as well
-		- change /data to /import
 		- enable abbreviations (fc for flashcard)
 	- .. make infrastructure to pass (1) file name and (2) number of lines to frontend via appData
 	- parse data into items

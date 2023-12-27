@@ -17,3 +17,7 @@ export const frontendPort = (): number => {
 export const backendPort = (): number => {
 	return 3041;
 }
+
+export const importDirectory = (): string => {
+	return 'import';
+}

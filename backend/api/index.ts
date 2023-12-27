@@ -15,7 +15,7 @@ app.get('/', (_req, res) => {
 
 app.get('/appdata', (_req, res) => {
 
-	const pathAndFileNames = qfil.getFileNamesInDirectory('src/data');
+	const pathAndFileNames = qfil.getFileNamesInDirectory(appconfig.importDirectory());
 	const fileObjects = apptools.getFileObjects(pathAndFileNames);
 	const entireContent = apptools.getEntireContent(fileObjects);
 	const dpodDataLoader = new DpodDataLoader(entireContent);
