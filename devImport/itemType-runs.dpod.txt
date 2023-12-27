@@ -2,8 +2,8 @@
 ID-Code
 Title
 Date
-Length;kilometers
-Duration
+Length;km
+Duration;time
 
 ==run
 20231221run
