@@ -33,9 +33,15 @@ export interface ISchemaField {
 	dataTypeIdCope: string;
 }
 
-export interface ISchemaDataItem {
-	schemaIdCode: string;
-	schmemaFields: ISchemaField[];
+export interface IDataTypeDataItem {
+	label: string;
+	idCode: string;
+	dataTypeIdCode: string;
+}
+
+export interface IDpodSchemaDataItem {
+	idCode: string;
+	dataTypes: IDataTypeDataItem[];
 }
 
 export type ILineBlockKind = 'schema' | 'item' | 'UNKNOWN';

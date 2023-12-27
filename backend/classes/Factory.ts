@@ -8,7 +8,7 @@ export class Factory {
 			dataTypeDefinitionLine += ';line';
 		}
 
-		const parts = qstr.breakIntoParts(';');
+		const parts = qstr.breakIntoParts(dataTypeDefinitionLine,';');
 		const idCode = parts[0];
 		const dataTypeIdCode = parts[1]; // TODO: make a type
 		switch (dataTypeIdCode) {

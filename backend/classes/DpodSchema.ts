@@ -27,14 +27,15 @@ export class DpodSchema {
 		for (const fieldLine of fieldLines) {
 			const dataType = Factory.instantiateDataType(fieldLine);
 			if (dataType) {
-				this.dataTypes.push();
+				this.dataTypes.push(dataType);
 			}
 		}
 	}
 
 	public getDataItem() {
 		return {
-			idCode: this.idCode
+			idCode: this.idCode,
+			dataTypes: this.dataTypes.map(m => m.getDataItem())
 		}
 	}
 }

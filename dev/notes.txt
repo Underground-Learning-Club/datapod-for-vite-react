@@ -12,5 +12,7 @@
 - backend sends this data in appData
 - frontend displays data
 
+
+- change LineBlock to DpodLineBlock
 - add readme to welcome page 
 - enable import to have any depth of directories

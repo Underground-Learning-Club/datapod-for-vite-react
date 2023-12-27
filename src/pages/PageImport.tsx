@@ -2,6 +2,7 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../AppContext";
 import { CompLineBlock } from "../components/CompLineBlock";
+import { CompDpodSchemaItem } from "../components/CompDpodSchema";
 
 export const PageImport = () => {
 	const { appData } = useContext(AppContext);
@@ -54,7 +55,7 @@ export const PageImport = () => {
 			)}
 
 			<h2 onClick={() => handleToggleArea("area03")}>
-				3. Line blocks created
+				3. Line blocks generated
 			</h2>
 			{areas.area03 && (
 				<div className="ml-6">
@@ -77,22 +78,23 @@ export const PageImport = () => {
 			)}
 
 			<h2 onClick={() => handleToggleArea("area04")}>
-				4. Datapod content created
+				4. Datapod content generated
 			</h2>
 			{areas.area04 && (
 				<div className="ml-6">
 					<h3 className="text-xl mb-2">Schemas</h3>
-					<ul className="list-disc ml-6">
+					<div className="flex gap-3">
 						{appData.dpodSchemaDataItems.map(
 							(dpodSchemaDataItem, index) => {
 								return (
-									<li key={index}>
-										{dpodSchemaDataItem.idCode}
-									</li>
+									<CompDpodSchemaItem
+										dpodSchemaDataItem={dpodSchemaDataItem}
+										key={index}
+									/>
 								);
 							}
 						)}
-					</ul>
+					</div>
 				</div>
 			)}
 		</div>

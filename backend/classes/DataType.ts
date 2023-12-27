@@ -8,4 +8,12 @@ export class DataType {
 		this.dataTypeIdCode = dataTypeIdCode;
 	}
 
+	public getDataItem() {
+		return {
+			label: "First Name",
+			idCode: "firstName",
+			dataTypeIdCode: "line"
+		}
+	}
+
 }
