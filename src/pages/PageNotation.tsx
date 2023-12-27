@@ -1,7 +1,7 @@
-import { ChangeEvent, useState } from "react";
+import { useEffect, useState } from "react";
 
 const _texts = {
-	originalText: "",
+	originalText: "file items",
 	titleNotation: "",
 	textNotation: "",
 	pascalNotation: "",
@@ -11,8 +11,11 @@ const _texts = {
 export const PageNotation = () => {
 	const [texts, setTexts] = useState(_texts);
 
-	const handleOriginalTextChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const value = e.target.value;
+	useEffect(() => {
+		handleOriginalTextChange(texts.originalText);
+	})
+
+	const handleOriginalTextChange = (value:string) => {
 		texts.originalText = value;
 		texts.camelNotation = value === '' ? '' : value.toUpperCase();
 		texts.pascalNotation = value === '' ? '' : value.toUpperCase();
@@ -30,7 +33,7 @@ export const PageNotation = () => {
 					autoFocus
 					className="p-1 rounded"
 					value={texts.originalText}
-					onChange={(e) => handleOriginalTextChange(e)}
+					onChange={(e) => handleOriginalTextChange(e.target.value)}
 				/>
 			</form>
 			<table className="notation">
