@@ -1,5 +1,6 @@
 - x recreate site from createBrowserRouter
 - >> make basic DpodParser class to parse line-only items from .txt files in the /data directory
+	- .. toggle areas 1-4
 	- .. create array of schemaDataItems, dataItems
 	- .. record and show schemas and items
 
