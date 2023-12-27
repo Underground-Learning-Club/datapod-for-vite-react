@@ -27,22 +27,6 @@ const router = createBrowserRouter([
 				element: <PageWelcome />,
 			},
 			{
-				path: "files",
-				element: <PageFiles />,
-			},
-			{
-				path: "entire-content",
-				element: <PageEntireContent />,
-			},
-			{
-				path: "line-blocks",
-				element: <PageLineBlocks />,
-			},
-			{
-				path: "datapod-content",
-				element: <PageDatapodContent />,
-			},
-			{
 				path: "notation",
 				element: <PageNotation/>,
 			},
