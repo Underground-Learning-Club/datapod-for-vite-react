@@ -1,6 +1,7 @@
 import { DataType } from "./DataType";
 import { LineBlock } from "./LineBlock";
 import * as qstr from '../../share/qtools/qstr';
+import { Factory } from "./Factory";
 
 export class DpodSchema {
 	private lineBlock: LineBlock;
@@ -24,7 +25,7 @@ export class DpodSchema {
 	private createDataTypes() {
 		const fieldLines = this.lineBlock.getAllLinesButFirst();
 		for (const fieldLine of fieldLines) {
-			const dataType = DataType.instantiate(fieldLine);
+			const dataType = Factory.instantiateDataType(fieldLine);
 			if (dataType) {
 				this.dataTypes.push();
 			}
