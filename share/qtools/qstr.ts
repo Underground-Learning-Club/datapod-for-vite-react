@@ -242,3 +242,100 @@ export const renderEnglishTitleCapitalization = (term: string) => {
 	});
 	return r;
 }
+
+export const forceCamelNotation = (term: string) => {
+	let r = term;
+
+	// specials
+	r = r === 'ID-Code' ? 'id code' : r;
+
+	// first change all e.g. "single-page" to "single page"
+	r = qstr.replaceAll(r, '-', ' ');
+
+	// if it is all uppercase (e.g. FAQ) then we want all lower case (faq) and not (fAQ)
+	if (qstr.isAllUppercase(r)) {
+		r = r.toLowerCase();
+	} else {
+
+		// get the pascal notation first
+		const pascalNotation = qstr.forcePascalNotation(r);
+
+		// now lowercase the first character
+		r = qstr.lowercaseFirstLetter(pascalNotation);
+	}
+
+	// make sure no spaces are in the string, e.g. "showcaseType Script" --> "showcaseTypeScript"
+	r = qstr.replaceAll(r, ' ', '');
+
+	return r;
+}
+
+export const forcePascalNotation = (term: string) => {
+	let r = String(term);
+
+	// exceptions
+	if (r.toLowerCase() === 'id-code') {
+		return 'IdCode';
+	}
+
+	r = qstr.cleanForCamelAndPascalNotation(r);
+
+	// convert to "First Name"
+	r = qstr.forceTitleNotation(r);
+
+	// force EVERY word to be uppercase, as it may be here "Save and Close"
+	r = qstr.forceCapitalizeFirstCharacterOfEveryWord(r);
+
+	// now simply take all spaces out
+	r = r.replace(' ', '');
+
+	// make sure no spaces are in the string, e.g. "showcaseType Script" --> "showcaseTypeScript"
+	r = qstr.replaceAll(r, ' ', '');
+
+	return r;
+}
+
+export const lowercaseFirstLetter = (term: string) => {
+	return term.charAt(0).toLowerCase() + term.slice(1);
+}
+
+// "Project 1: The Book Sections" => "Project 1 The Book Sections"
+// "Die fröhliche Wissenschaft" => "Die froehliche Wissenschaft"
+export const cleanForCamelAndPascalNotation = (term: string) => {
+	let r = term;
+	r = qstr.convertForeignCharactersToStandardAscii(r);
+	r = r.replace(/[^A-Za-z0-9 ]/g, '');
+	return r;
+}
+
+export const forceCapitalizeFirstCharacterOfEveryWord = (term: string) => {
+	let r = '';
+	const words = qstr.breakIntoParts(term, ' ');
+	if (words.length > 0) {
+		words.forEach(function (word) {
+			r += `${qstr.capitalizeFirstLetter(word)} `;
+		});
+		r = r.trim();
+	}
+	return r;
+}
+
+// "Die fröhliche Wissenschaft" => "Die froehliche Wissenschaft"
+export const convertForeignCharactersToStandardAscii = (term: string) => {
+	let r = term;
+	// French
+	r = r.replace('è', 'e');
+	r = r.replace('à', 'e');
+	r = r.replace('ê', 'e');
+	// todo: add more that you need, with tests
+
+	// German
+	r = r.replace('ö', 'oe');
+	r = r.replace('ß', 'ss');
+	r = r.replace('ü', 'ue');
+	r = r.replace('ä', 'ae');
+	r = r.replace('Ö', 'Oe');
+	r = r.replace('Ü', 'Ue');
+	r = r.replace('Ä', 'Ae');
+	return r;
+}

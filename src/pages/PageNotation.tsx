@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import * as qstr from '../../share/qtools/qstr';
 
 const _texts = {
-	originalText: "file items",
+	originalText: "pageAndFileName",
 	titleNotation: "",
 	textNotation: "",
 	pascalNotation: "",
@@ -18,8 +18,8 @@ export const PageNotation = () => {
 
 	const handleOriginalTextChange = (value:string) => {
 		texts.originalText = value;
-		texts.camelNotation = value === '' ? '' : value.toUpperCase();
-		texts.pascalNotation = value === '' ? '' : value.toUpperCase();
+		texts.camelNotation = qstr.forceCamelNotation(value);
+		texts.pascalNotation = qstr.forcePascalNotation(value);
 		texts.titleNotation = qstr.forceTitleNotation(value);
 		texts.textNotation = qstr.forceTextNotation(value);
 		const _texts = structuredClone(texts);
@@ -32,7 +32,7 @@ export const PageNotation = () => {
 				original text:{" "}
 				<input
 					autoFocus
-					className="p-1 rounded"
+					className="p-1 rounded w-64"
 					value={texts.originalText}
 					onChange={(e) => handleOriginalTextChange(e.target.value)}
 				/>
