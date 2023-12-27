@@ -22,6 +22,8 @@
 		- x make line blocks
 		- x make notation page work
 		- x implement single/plural with notation page
+		- .. be able to switch import directory
+		- .. fix read all
 		- .. change /data to /import
 		- .. create array of schemaDataItems, dataItems
 		- .. record and show schemas and items
