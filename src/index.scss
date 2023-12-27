@@ -19,12 +19,18 @@ a.active {
 table.notation {
 	tbody {
 		tr {
+			td {
+				height: 2rem;
+			}
+
 			td:nth-child(1) {
 				padding-right: 1rem;
+
 				&:after {
 					content: ':';
 				}
 			}
+
 			td:nth-child(2) {
 				font-family: courier;
 				color: brown;
