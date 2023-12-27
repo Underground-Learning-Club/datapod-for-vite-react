@@ -7,7 +7,37 @@ export const PageImport = () => {
 
 	return (
 		<div className="pageImport">
-			<h2>Files to import</h2>
+
+			<h2>4. Datapod items created</h2>
+			<div className="ml-6">
+coming...
+			</div>
+			
+
+			<h2>3. Line blocks created</h2>
+			<div className="ml-6">
+				<p className="mb-3">
+					Number of LineBlocks: {appData.lineBlockDataItems.length}
+				</p>
+				{appData.lineBlockDataItems.map((lineBlockDataItem, index) => {
+					return (
+						<div key={index}>
+							<CompLineBlock
+								lineBlockDataItem={lineBlockDataItem}
+							/>
+						</div>
+					);
+				})}
+			</div>
+
+			<h2>2. Entire content imported</h2>
+			<textarea
+				value={appData.entireContent}
+				readOnly
+				className="block mb-3 w-1/2 h-[20rem] p-3 font-mono text-xs text-orange-700 ml-6"
+			/>
+
+			<h2>1. Files imported</h2>
 			<ul className="list-disc ml-6">
 				{appData.fileObjects.map((fileObject, index) => {
 					return (
@@ -24,34 +54,6 @@ export const PageImport = () => {
 					);
 				})}
 			</ul>
-
-			<h2>Entire content</h2>
-			<textarea
-				value={appData.entireContent}
-				readOnly
-				className="block mb-3 w-1/2 h-[20rem] p-3 font-mono text-xs text-orange-700 ml-6"
-			/>
-
-			<h2>Line blocks</h2>
-			<div className="ml-6">
-				<p className="mb-3">
-					Number of LineBlocks: {appData.lineBlockDataItems.length}
-				</p>
-				{appData.lineBlockDataItems.map((lineBlockDataItem, index) => {
-					return (
-						<div key={index}>
-							<CompLineBlock
-								lineBlockDataItem={lineBlockDataItem}
-							/>
-						</div>
-					);
-				})}
-			</div>
-
-			<h2>Datapod content</h2>
-			<div className="ml-6">
-coming...
-			</div>
 		</div>
 	);
 };
