@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import * as qstr from '../../share/qtools/qstr';
 
 const _texts = {
 	originalText: "file items",
@@ -19,8 +20,8 @@ export const PageNotation = () => {
 		texts.originalText = value;
 		texts.camelNotation = value === '' ? '' : value.toUpperCase();
 		texts.pascalNotation = value === '' ? '' : value.toUpperCase();
-		texts.titleNotation = value === '' ? '' : value.toUpperCase();
-		texts.textNotation = value === '' ? '' : value.toUpperCase();
+		texts.titleNotation = qstr.forceTitleNotation(value);
+		texts.textNotation = qstr.forceTextNotation(value);
 		const _texts = structuredClone(texts);
 		setTexts(_texts);
 	};

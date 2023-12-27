@@ -20,7 +20,7 @@
 	- >> create DatapodManager
 		- x make page Line Blocks
 		- x make line blocks
-		- .. make notation page
+		- .. make notation page work
 		- .. implement single/plural with notation page
 		- .. record and show schemas and items
 		- enable abbreviations (fc for flashcard)
