@@ -5,22 +5,24 @@ import { CompLineBlock } from "../components/CompLineBlock";
 
 export const PageImport = () => {
 	const { appData } = useContext(AppContext);
-	const [ areas, setAreas ] = useState<any>({
-		area01: true,
+	const [areas, setAreas] = useState<any>({
+		area01: false,
 		area02: false,
 		area03: false,
 		area04: true,
 	});
 
-	const handleToggleArea = (areaIdCode: string) => {  
+	const handleToggleArea = (areaIdCode: string) => {
 		areas[areaIdCode] = !areas[areaIdCode];
 		const _areas = structuredClone(areas);
 		setAreas(_areas);
-	}
+	};
 
 	return (
 		<div className="pageImport">
-			<h2 onClick={()=>handleToggleArea('area01')}>1. Files imported</h2>
+			<h2 onClick={() => handleToggleArea("area01")}>
+				1. All files imported
+			</h2>
 			{areas.area01 && (
 				<ul className="list-disc ml-6">
 					{appData.fileObjects.map((fileObject, index) => {
@@ -40,7 +42,9 @@ export const PageImport = () => {
 				</ul>
 			)}
 
-			<h2 onClick={()=>handleToggleArea('area02')}>2. Entire content imported</h2>
+			<h2 onClick={() => handleToggleArea("area02")}>
+				2. Content of all files combined
+			</h2>
 			{areas.area02 && (
 				<textarea
 					value={appData.entireContent}
@@ -49,35 +53,48 @@ export const PageImport = () => {
 				/>
 			)}
 
-			<h2>3. Line blocks imported</h2>
-			<div className="ml-6">
-				<p className="mb-3">
-					Number of LineBlocks: {appData.lineBlockDataItems.length}
-				</p>
-				{appData.lineBlockDataItems.map((lineBlockDataItem, index) => {
-					return (
-						<div key={index}>
-							<CompLineBlock
-								lineBlockDataItem={lineBlockDataItem}
-							/>
-						</div>
-					);
-				})}
-			</div>
-
-			<h2>4. Datapod content imported</h2>
-			<div className="ml-6">
-				<h3 className="text-xl mb-2">Schemas</h3>
-				<ul className="list-disc ml-6">
-					{appData.dpodSchemaDataItems.map(
-						(dpodSchemaDataItem, index) => {
+			<h2 onClick={() => handleToggleArea("area03")}>
+				3. Line blocks created
+			</h2>
+			{areas.area03 && (
+				<div className="ml-6">
+					<p className="mb-3">
+						Number of LineBlocks:{" "}
+						{appData.lineBlockDataItems.length}
+					</p>
+					{appData.lineBlockDataItems.map(
+						(lineBlockDataItem, index) => {
 							return (
-								<li key={index}>{dpodSchemaDataItem.idCode}</li>
+								<div key={index}>
+									<CompLineBlock
+										lineBlockDataItem={lineBlockDataItem}
+									/>
+								</div>
 							);
 						}
 					)}
-				</ul>
-			</div>
+				</div>
+			)}
+
+			<h2 onClick={() => handleToggleArea("area04")}>
+				4. Datapod content created
+			</h2>
+			{areas.area04 && (
+				<div className="ml-6">
+					<h3 className="text-xl mb-2">Schemas</h3>
+					<ul className="list-disc ml-6">
+						{appData.dpodSchemaDataItems.map(
+							(dpodSchemaDataItem, index) => {
+								return (
+									<li key={index}>
+										{dpodSchemaDataItem.idCode}
+									</li>
+								);
+							}
+						)}
+					</ul>
+				</div>
+			)}
 		</div>
 	);
 };
