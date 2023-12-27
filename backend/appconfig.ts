@@ -1,4 +1,4 @@
-import * as qfil from './qtools/qfil';
+import * as qfil from '../share/qtools/qfil';
 import * as apptools from './apptools';
 
 export const appIdCode = (): string => {

@@ -1,6 +1,6 @@
 import { IFileObject } from "../src/interfaces.js";
-import * as qfil from './qtools/qfil.js';
-import * as appconfig from '../share/appconfig.js';
+import * as qfil from '../share/qtools/qfil.js';
+import * as appconfig from './appconfig.js';
 
 export const extractPortNumber = (text: string) => {
 	const regex = /(\d+)/;

@@ -2,8 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import { IAppData } from '../../src/interfaces.js';
 import * as qfil from '../../share/qtools/qfil.js';
-import * as apptools from '../../share/apptools.js';
-import * as appconfig from '../../share/appconfig.js';
+import * as apptools from '../apptools.js';
+import * as appconfig from '../appconfig.js';
 import { DpodDataLoader } from '../classes/DpodDataLoader.js';
 
 const app = express();

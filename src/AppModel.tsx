@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
-import * as appconfig from "../share/appconfig";
+import * as appconfig from "../backend/appconfig";
 import { IAppData } from "./interfaces";
 
 const backendUrl = `http://localhost:${appconfig.backendPort()}/appData`;
