@@ -2,6 +2,7 @@
 - >> make basic DpodParser class to parse line-only items from .txt files in the /data directory
 	- .. show records: table | JSON | CSV | Datapod
 	- add validation
+	- make archive button
 
 
 		- notation page: show all variations with singular/plural as well
