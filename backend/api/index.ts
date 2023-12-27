@@ -4,7 +4,7 @@ import { IAppData } from '../../src/interfaces.js';
 import * as qfil from '../../share/qtools/qfil.js';
 import * as apptools from '../../share/apptools.js';
 import * as appconfig from '../../share/appconfig.js';
-import { DpodDataLoader } from '../../src/classes/DpodDataLoader.js';
+import { DpodDataLoader } from '../classes/DpodDataLoader.js';
 
 const app = express();
 app.use(cors());
@@ -19,7 +19,6 @@ app.get('/appdata', (_req, res) => {
 	const fileObjects = apptools.getFileObjects(pathAndFileNames);
 	const entireContent = apptools.getEntireContent(fileObjects);
 	const dpodDataLoader = new DpodDataLoader(entireContent);
-	const schemaDataItems = dpodDataLoader.getSchemaDataItems();
 
 	const appJsonData: IAppData = {
 		appIdCode: appconfig.appIdCode(),

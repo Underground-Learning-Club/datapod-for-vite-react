@@ -1,16 +1,19 @@
 import * as qstr from '../../share/qtools/qstr';
-import { ILineBlockDataItem, ISchemaDataItem } from '../interfaces';
+import { ILineBlockDataItem } from '../../src/interfaces';
+import { DpodSchema } from './DpodSchema';
 import { LineBlock } from './LineBlock';
 
 export class DpodDataLoader {
 	private content = '';
 	private lines: string[] = [];
 	private lineBlocks: LineBlock[] = [];
+	private dpodSchemas: DpodSchema[] = [];
 
 	constructor(content: string) {
 		this.content = content;
 		this.createLines();
 		this.createLineBlocks();
+		this.createDpodSchemas();
 	}
 
 	public getLineBlockDataItems(): ILineBlockDataItem[] {
@@ -50,13 +53,14 @@ export class DpodDataLoader {
 		}
 	}
 
-	public getSchemaDataItems(): ISchemaDataItem[] {
-		const schemaDataItems = [] as ISchemaDataItem[];
-		console.log(this.lineBlocks);
-		// for (const lineBlock of this.lineBlocks) {
-		// 	const lineBlockKind = lineBlock.getKind();
-		// }
-		return schemaDataItems;
+	public createDpodSchemas(): void {
+		for (const lineBlock of this.lineBlocks) {
+			const lineBlockKind = lineBlock.getKind();
+			if (lineBlockKind === 'schema') {
+				const dpodSchema = new DpodSchema(lineBlock)
+				this.dpodSchemas.push(dpodSchema);
+			}
+		}
 	}
 
 }
