@@ -24,7 +24,8 @@ export const blankAppData = {
 	backendPort: 0,
 	fileObjects: [],
 	entireContent: '',
-	lineBlockDataItems: []
+	lineBlockDataItems: [],
+	dpodSchemaDataItems: []
 }
 
 export interface ISchemaField {

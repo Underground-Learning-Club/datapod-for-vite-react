@@ -1,37 +1,53 @@
-import { useContext } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useContext, useState } from "react";
 import { AppContext } from "../AppContext";
 import { CompLineBlock } from "../components/CompLineBlock";
 
 export const PageImport = () => {
 	const { appData } = useContext(AppContext);
+	const [ areas, setAreas ] = useState<any>({
+		area01: true,
+		area02: false,
+		area03: false,
+		area04: true,
+	});
+
+	const handleToggleArea = (areaIdCode: string) => {  
+		areas[areaIdCode] = !areas[areaIdCode];
+		const _areas = structuredClone(areas);
+		setAreas(_areas);
+	}
 
 	return (
 		<div className="pageImport">
+			<h2 onClick={()=>handleToggleArea('area01')}>1. Files imported</h2>
+			{areas.area01 && (
+				<ul className="list-disc ml-6">
+					{appData.fileObjects.map((fileObject, index) => {
+						return (
+							<li key={index}>
+								<span className="font-mono font-semibold">
+									{fileObject.pathAndFileName}
+								</span>
+								<textarea
+									value={fileObject.content}
+									readOnly
+									className="block mb-3 w-1/2 h-48 p-3 font-mono text-xs text-orange-700"
+								></textarea>
+							</li>
+						);
+					})}
+				</ul>
+			)}
 
-			<h2>1. Files imported</h2>
-			<ul className="list-disc ml-6">
-				{appData.fileObjects.map((fileObject, index) => {
-					return (
-						<li key={index}>
-							<span className="font-mono font-semibold">
-								{fileObject.pathAndFileName}
-							</span>
-							<textarea
-								value={fileObject.content}
-								readOnly
-								className="block mb-3 w-1/2 h-48 p-3 font-mono text-xs text-orange-700"
-							></textarea>
-						</li>
-					);
-				})}
-			</ul>
-
-			<h2>2. Entire content imported</h2>
-			<textarea
-				value={appData.entireContent}
-				readOnly
-				className="block mb-3 w-1/2 h-[20rem] p-3 font-mono text-xs text-orange-700 ml-6"
-			/>
+			<h2 onClick={()=>handleToggleArea('area02')}>2. Entire content imported</h2>
+			{areas.area02 && (
+				<textarea
+					value={appData.entireContent}
+					readOnly
+					className="block mb-3 w-1/2 h-[20rem] p-3 font-mono text-xs text-orange-700 ml-6"
+				/>
+			)}
 
 			<h2>3. Line blocks imported</h2>
 			<div className="ml-6">
@@ -53,14 +69,15 @@ export const PageImport = () => {
 			<div className="ml-6">
 				<h3 className="text-xl mb-2">Schemas</h3>
 				<ul className="list-disc ml-6">
-					{appData.dpodSchemaDataItems.map((dpodSchemaDataItem, index) => {
-						return(
-							<li key={index}>{dpodSchemaDataItem.idCode}</li>
-						)
-					})}
+					{appData.dpodSchemaDataItems.map(
+						(dpodSchemaDataItem, index) => {
+							return (
+								<li key={index}>{dpodSchemaDataItem.idCode}</li>
+							);
+						}
+					)}
 				</ul>
 			</div>
-			
 		</div>
 	);
 };
