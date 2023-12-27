@@ -23,15 +23,15 @@
 		- x make notation page work
 		- x implement single/plural with notation page
 		- x be able to switch import directory
-		- .. fix read all
-		- .. change /data to /import
-		- .. create array of schemaDataItems, dataItems
-		- .. record and show schemas and items
-		- make import page
+		- x fix read all
+		- x change /data to /import
+		- .. make import page
 		- make admin page
 		- welcome page empty
+		- .. create array of schemaDataItems, dataItems
+		- .. record and show schemas and items
 
-		
+
 		- notation page: show all variations with singular/plural as well
 		- enable abbreviations (fc for flashcard)
 	- .. make infrastructure to pass (1) file name and (2) number of lines to frontend via appData

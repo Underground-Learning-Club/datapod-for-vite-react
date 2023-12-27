@@ -14,6 +14,7 @@ import { PageEntireContent } from "./pages/PageEntireContent.tsx";
 import { PageDatapodContent } from "./pages/PageDatapodContent.tsx";
 import { PageLineBlocks } from "./pages/PageLineBlocks.tsx";
 import { PageNotation } from "./pages/PageNotation.tsx";
+import { PageImport } from "./pages/PageImport.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
 			{
 				path: "notation",
 				element: <PageNotation/>,
+			},
+			{
+				path: "import",
+				element: <PageImport/>,
 			},
 			{
 				path: "/",
