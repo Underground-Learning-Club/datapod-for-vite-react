@@ -23,7 +23,6 @@ export class LineBlock {
 	}
 
 	public blankOutLines() {
-		console.log('blanking');
 		return this.lines = [];
 	}
 

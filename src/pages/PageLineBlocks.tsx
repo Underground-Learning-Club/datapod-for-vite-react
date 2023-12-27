@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
+import { CompLineBlock } from "../components/CompLineBlock";
 
 export const PageLineBlocks = () => {
 	const { appData } = useContext(AppContext);
@@ -11,7 +12,7 @@ export const PageLineBlocks = () => {
 			{appData.lineBlocks.map((lineBlock, index) => {
 				return (
 					<div key={index}>
-						<div className="inline-block cursor-pointer">nnn ({lineBlock.getNumberOfLines()})</div>
+						<CompLineBlock lineBlock={lineBlock} />
 					</div>
 				);
 			})}
