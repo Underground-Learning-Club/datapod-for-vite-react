@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface IFileObject {
 	pathAndFileName: string;
 	content: string;
@@ -14,7 +15,7 @@ export interface IAppData {
 	fileObjects: IFileObject[];
 	entireContent: string;
 	lineBlockDataItems: ILineBlockDataItem[];
-	dpodSchemaNumber: number;
+	dpodSchemaDataItems: any[];
 }
 
 export const blankAppData = {

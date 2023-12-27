@@ -10,7 +10,14 @@ export const PageImport = () => {
 
 			<h2>4. Datapod content imported</h2>
 			<div className="ml-6">
-				Number of schemas: {appData.dpodSchemaNumber}
+				<h3 className="text-xl mb-2">Schemas</h3>
+				<ul className="list-disc ml-6">
+					{appData.dpodSchemaDataItems.map((dpodSchemaDataItem, index) => {
+						return(
+							<li key={index}>{dpodSchemaDataItem.idCode}</li>
+						)
+					})}
+				</ul>
 			</div>
 			
 

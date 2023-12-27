@@ -30,6 +30,11 @@ export class DpodSchema {
 				this.dataTypes.push();
 			}
 		}
+	}
 
+	public getDataItem() {
+		return {
+			idCode: this.idCode
+		}
 	}
 }

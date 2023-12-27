@@ -27,7 +27,7 @@ app.get('/appdata', (_req, res) => {
 		fileObjects,
 		entireContent,
 		lineBlockDataItems: dpodDataLoader.getLineBlockDataItems(),
-		dpodSchemaNumber: dpodDataLoader.getDpodSchemas().length
+		dpodSchemaDataItems: dpodDataLoader.getDpodSchemaDataItems()
 	}
 	res.status(200).json(appJsonData);
 });

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as qstr from '../../share/qtools/qstr';
 import { ILineBlockDataItem } from '../../src/interfaces';
 import { DpodSchema } from './DpodSchema';
@@ -64,13 +65,20 @@ export class DpodDataLoader {
 			if (lineBlockKind === 'schema') {
 				const dpodSchema = new DpodSchema(lineBlock)
 				this.dpodSchemas.push(dpodSchema);
-				console.log('pushed');
 			}
 		}
 	}
 
 	public getDpodSchemas() {
 		return this.dpodSchemas
+	}
+	
+	public getDpodSchemaDataItems() {
+		const dpodSchemaDataItems:any[] = [];
+		for (const dpodSchema of this.dpodSchemas) {
+			dpodSchemaDataItems.push(dpodSchema.getDataItem());
+		}
+		return dpodSchemaDataItems;
 	}
 
 }
