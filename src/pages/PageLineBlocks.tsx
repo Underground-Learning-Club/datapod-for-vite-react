@@ -7,12 +7,12 @@ export const PageLineBlocks = () => {
 
 	return (
 		<>
-			<p>Number of LineBlocks: {appData.lineBlocks.length}</p>
+			<p>Number of LineBlocks: {appData.lineBlockDataItems.length}</p>
 
-			{appData.lineBlocks.map((lineBlock, index) => {
+			{appData.lineBlockDataItems.map((lineBlockDataItem, index) => {
 				return (
 					<div key={index}>
-						<CompLineBlock lineBlock={lineBlock} />
+						<CompLineBlock lineBlockDataItem={lineBlockDataItem} />
 					</div>
 				);
 			})}

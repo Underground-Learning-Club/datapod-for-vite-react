@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { IJsonAppData } from '../../src/interfaces.js';
+import { IAppData } from '../../src/interfaces.js';
 import * as qfil from '../../share/qtools/qfil.js';
 import * as apptools from '../../share/apptools.js';
 import * as appconfig from '../../share/appconfig.js';
@@ -20,13 +20,13 @@ app.get('/appdata', (_req, res) => {
 	const entireContent = apptools.getEntireContent(fileObjects);
 	const dpodDataLoader = new DpodDataLoader(entireContent);
 
-	const appJsonData: IJsonAppData = {
+	const appJsonData: IAppData = {
 		appIdCode: appconfig.appIdCode(),
 		frontendPort: appconfig.frontendPort(),
 		backendPort: appconfig.backendPort(),
 		fileObjects,
 		entireContent,
-		lineBlockDataItems: dpodDataLoader.getLineBlocks()
+		lineBlockDataItems: dpodDataLoader.getLineBlockDataItems()
 	}
 	res.status(200).json(appJsonData);
 });

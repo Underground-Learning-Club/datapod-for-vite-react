@@ -1,4 +1,5 @@
 import * as qstr from '../../share/qtools/qstr';
+import { ILineBlockDataItem } from '../interfaces';
 import { LineBlock } from './LineBlock';
 
 export class DpodDataLoader {
@@ -12,8 +13,8 @@ export class DpodDataLoader {
 		this.createLineBlocks();
 	}
 
-	public getLineBlocks() {
-		return this.lineBlocks;
+	public getLineBlockDataItems() : ILineBlockDataItem[] {
+		return this.lineBlocks.map(m => m.getLineBlockDataItem());
 	}
 
 	private createLines() {

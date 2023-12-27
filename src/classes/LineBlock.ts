@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as qstr from '../../share/qtools/qstr';
+import { ILineBlockDataItem } from '../interfaces';
 
 export class LineBlock {
 	private lines: string[] = [];
@@ -24,6 +25,12 @@ export class LineBlock {
 
 	public blankOutLines() {
 		return this.lines = [];
+	}
+
+	public getLineBlockDataItem(): ILineBlockDataItem {
+		return {
+			lines: this.lines
+		}
 	}
 
 	public static instantiateLineBlock(lineBlockDataItem: any) {
