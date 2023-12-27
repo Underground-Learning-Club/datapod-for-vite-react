@@ -14,7 +14,7 @@
 
 @layer components {
 	div.pageImport h2 {
-		@apply text-2xl mb-2 text-gray-400 bg-gray-700 py-1 px-2 rounded w-[60rem];
+		@apply text-2xl mb-2 text-gray-400 bg-gray-700 py-1 px-2 rounded w-[60rem] mt-8 first:mt-2;
 	}
 }
 

@@ -1,0 +1,4 @@
+==group
+The new group
+Another test group.
+3.8
