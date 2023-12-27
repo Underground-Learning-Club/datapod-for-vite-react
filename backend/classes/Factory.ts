@@ -1,5 +1,7 @@
 import * as qstr from '../../share/qtools/qstr';
+import { DataTypeJudoBelt } from './DataTypeJudoBelt';
 import { DataTypeLine } from './DataTypeLine';
+import { DataTypeUnknown } from './DataTypeUnknown';
 
 export class Factory {
 
@@ -13,9 +15,11 @@ export class Factory {
 		const dataTypeIdCode = parts[1]; // TODO: make a type
 		switch (dataTypeIdCode) {
 			case 'line':
-				return new DataTypeLine(idCode, dataTypeIdCode);
+				return new DataTypeLine(idCode);
+			case 'judoBelt':
+				return new DataTypeJudoBelt(idCode);
 			default:
-				return null;
+				return new DataTypeUnknown(idCode, dataTypeIdCode);
 		}
 	}
 }
