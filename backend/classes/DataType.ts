@@ -1,5 +1,5 @@
 import * as qstr from '../../share/qtools/qstr';
-import { DataTypeLine } from './DataTypeLine';
+// import { DataTypeLine } from './DataTypeLine';
 
 export class DataType {
 	protected idCode = '';
@@ -28,11 +28,11 @@ export class DataType {
 		const parts = qstr.breakIntoParts(';');
 		const idCode = parts[0];
 		const dataTypeIdCode = parts[1]; // TODO: make a type
-		switch (dataTypeIdCode) {
-			case 'line':
-				return new DataTypeLine(idCode, dataTypeIdCode);
-			default:
-				return null;
-		}
+		// switch (dataTypeIdCode) {
+		// 	case 'line':
+		// 		return new DataTypeLine(idCode, dataTypeIdCode);
+		// 	default:
+		// 		return null;
+		// }
 	}
 }

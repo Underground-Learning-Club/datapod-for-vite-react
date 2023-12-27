@@ -8,9 +8,9 @@ export const CompLineBlock = ({ lineBlockDataItem }: IProps) => {
 
 	return (
 		<div className="bg-gray-200 text-orange-700 text-xs mb-3 font-mono py-2 px-4 w-fit">
-			{lineBlockDataItem.lines.map(line => {
+			{lineBlockDataItem.lines.map((line,index) => {
 				return (
-					<div>{line}</div>
+					<div key={index}>{line}</div>
 				)
 			})}
 		</div>

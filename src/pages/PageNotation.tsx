@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import * as qstr from '../../share/qtools/qstr';
 
@@ -14,7 +15,7 @@ export const PageNotation = () => {
 
 	useEffect(() => {
 		handleOriginalTextChange(texts.originalText);
-	})
+	},[])
 
 	const handleOriginalTextChange = (value:string) => {
 		texts.originalText = value;
