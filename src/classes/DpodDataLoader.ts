@@ -1,5 +1,5 @@
 import * as qstr from '../../share/qtools/qstr';
-import { ILineBlockDataItem } from '../interfaces';
+import { ILineBlockDataItem, ISchemaDataItem } from '../interfaces';
 import { LineBlock } from './LineBlock';
 
 export class DpodDataLoader {
@@ -13,7 +13,7 @@ export class DpodDataLoader {
 		this.createLineBlocks();
 	}
 
-	public getLineBlockDataItems() : ILineBlockDataItem[] {
+	public getLineBlockDataItems(): ILineBlockDataItem[] {
 		return this.lineBlocks.map(m => m.getLineBlockDataItem());
 	}
 
@@ -49,4 +49,14 @@ export class DpodDataLoader {
 			}
 		}
 	}
+
+	public getSchemaDataItems(): ISchemaDataItem[] {
+		const schemaDataItems = [] as ISchemaDataItem[];
+		console.log(this.lineBlocks);
+		// for (const lineBlock of this.lineBlocks) {
+		// 	const lineBlockKind = lineBlock.getKind();
+		// }
+		return schemaDataItems;
+	}
+
 }

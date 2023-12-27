@@ -19,6 +19,7 @@ app.get('/appdata', (_req, res) => {
 	const fileObjects = apptools.getFileObjects(pathAndFileNames);
 	const entireContent = apptools.getEntireContent(fileObjects);
 	const dpodDataLoader = new DpodDataLoader(entireContent);
+	const schemaDataItems = dpodDataLoader.getSchemaDataItems();
 
 	const appJsonData: IAppData = {
 		appIdCode: appconfig.appIdCode(),

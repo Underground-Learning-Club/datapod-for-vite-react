@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as qstr from '../../share/qtools/qstr';
-import { ILineBlockDataItem } from '../interfaces';
+import { ILineBlockDataItem, ILineBlockKind, ISchemaDataItem } from '../interfaces';
 
 export class LineBlock {
 	private lines: string[] = [];
@@ -31,6 +31,12 @@ export class LineBlock {
 		return {
 			lines: this.lines
 		}
+	}
+
+	public getKind(): ILineBlockKind {
+		const marker = this.lines[0].slice(0, 2);
+		console.log(marker);
+		return 'UNKNOWN';
 	}
 
 	public static instantiateLineBlock(lineBlockDataItem: any) {

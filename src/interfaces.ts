@@ -24,3 +24,15 @@ export const blankAppData = {
 	entireContent: '',
 	lineBlockDataItems: []
 }
+
+export interface ISchemaField {
+	idCode: string;
+	dataTypeIdCope: string;
+}
+
+export interface ISchemaDataItem {
+	schemaIdCode: string;
+	schmemaFields: ISchemaField[];
+}
+
+export type ILineBlockKind = 'schema' | 'item' | 'UNKNOWN';
