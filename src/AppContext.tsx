@@ -4,6 +4,7 @@ import * as AppModel from "./AppModel";
 
 interface IAppContext {
 	appData: IAppData;
+	setAppData: (appData: IAppData) => void;
 }
 
 interface IAppProvider {
@@ -26,6 +27,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		<AppContext.Provider
 			value={{
 				appData,
+				setAppData
 			}}
 		>
 			{children}

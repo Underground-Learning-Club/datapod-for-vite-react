@@ -14,7 +14,8 @@
 	- x rename core
 	- x make appModel with async
 	- x reload as LineBlock classes
-	- .. test tsx in CompLineBlock
+	- x test tsx in CompLineBlock
+	- .. switch to JsonAppData
 	- >> create DatapodManager
 		- .. make page Line Blocks
 		- .. make line blocks

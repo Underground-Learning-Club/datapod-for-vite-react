@@ -20,7 +20,7 @@ app.get('/appdata', (_req, res) => {
 	const entireContent = apptools.getEntireContent(fileObjects);
 	const dpodDataLoader = new DpodDataLoader(entireContent);
 
-	const appData: IJsonAppData = {
+	const appJsonData: IJsonAppData = {
 		appIdCode: appconfig.appIdCode(),
 		frontendPort: appconfig.frontendPort(),
 		backendPort: appconfig.backendPort(),
@@ -28,7 +28,7 @@ app.get('/appdata', (_req, res) => {
 		entireContent,
 		lineBlockDataItems: dpodDataLoader.getLineBlocks()
 	}
-	res.status(200).json(appData);
+	res.status(200).json(appJsonData);
 });
 
 app.listen(appconfig.backendPort(), () => {
