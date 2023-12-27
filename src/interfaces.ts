@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { LineBlock } from "./classes/LineBlock";
 
 export interface IFileObject {
@@ -5,13 +6,20 @@ export interface IFileObject {
 	content: string;
 }
 
-export interface IAppData {
+interface IBaseAppData {
 	appIdCode: string;
 	frontendPort: number;
 	backendPort: number;
 	fileObjects: IFileObject[];
 	entireContent: string;
+}
+
+export interface IAppData extends IBaseAppData {
 	lineBlocks: LineBlock[];
+}
+
+export interface IJsonAppData extends IBaseAppData {
+	lineBlockDataItems: any[];
 }
 
 export const blankAppData = {

@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { IAppData, blankAppData } from "./interfaces";
-import { getAppData } from "./AppModel";
+import * as AppModel from "./AppModel";
 
 interface IAppContext {
 	appData: IAppData;
@@ -17,7 +17,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 
 	useEffect(() => {
 		(async () => {
-			const _appData = await getAppData();
+			const _appData = await AppModel.getAppData();
 			setAppData(_appData);
 		})();
 	}, []);

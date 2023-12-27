@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as qstr from '../../share/qtools/qstr';
 
 export class LineBlock {
@@ -15,5 +16,23 @@ export class LineBlock {
 
 	getTest() {
 		return 'this is a line block';
+	}
+
+	setDataItem(dataItem: any) {
+		this.lines = dataItem.lines;
+	}
+
+	static instantiateLineBlock(lineBlockDataItem: any) {
+		const lineBlock = new LineBlock();
+		lineBlock.setDataItem(lineBlockDataItem);
+		return lineBlock;
+	}
+
+	static instantiateLineBlocks(lineBlockDataItems: any) {
+		const lineBlocks: LineBlock[] = [];
+		for (const lineBlockDataItem of lineBlockDataItems) {
+			lineBlocks.push(LineBlock.instantiateLineBlock(lineBlockDataItem));
+		}
+		return lineBlocks;
 	}
 }
