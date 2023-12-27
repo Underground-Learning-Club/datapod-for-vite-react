@@ -10,25 +10,36 @@ export class LineBlock {
 		}
 	}
 
-	addLine(line: string) {
+	public addLine(line: string) {
 		this.lines.push(line);
 	}
 
-	getTest() {
-		return 'this is a line block';
-	}
-
-	setDataItem(dataItem: any) {
+	public setDataItem(dataItem: any) {
 		this.lines = dataItem.lines;
 	}
 
-	static instantiateLineBlock(lineBlockDataItem: any) {
+	public getNumberOfLines() {
+		return this.lines.length;
+	}
+
+	public blankOutLines() {
+		console.log('blanking');
+		return this.lines = [];
+	}
+
+	public getJsx() {
+		return (
+			<p onClick={() => this.blankOutLines()}>dkjdkjf</p>
+		)
+	}
+
+	public static instantiateLineBlock(lineBlockDataItem: any) {
 		const lineBlock = new LineBlock();
 		lineBlock.setDataItem(lineBlockDataItem);
 		return lineBlock;
 	}
 
-	static instantiateLineBlocks(lineBlockDataItems: any) {
+	public static instantiateLineBlocks(lineBlockDataItems: any) {
 		const lineBlocks: LineBlock[] = [];
 		for (const lineBlockDataItem of lineBlockDataItems) {
 			lineBlocks.push(LineBlock.instantiateLineBlock(lineBlockDataItem));

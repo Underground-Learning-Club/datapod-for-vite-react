@@ -12,8 +12,9 @@
 	- x switch to share and qtools
 	- x new page: "Datapod Content"
 	- x rename core
-	- .. make appModel with async
-	- .. reload as LineBlock classes
+	- x make appModel with async
+	- x reload as LineBlock classes
+	- .. test tsx in classes
 	- >> create DatapodManager
 		- .. make page Line Blocks
 		- .. make line blocks
