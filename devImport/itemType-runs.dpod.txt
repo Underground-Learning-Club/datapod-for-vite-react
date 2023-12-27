@@ -3,7 +3,7 @@ ID-Code
 Title
 Date
 Length;km
-Duration;time
+Duration
 
 ==run
 20231221run
