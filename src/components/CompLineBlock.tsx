@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { AppContext } from "../AppContext";
 import { ILineBlockDataItem } from "../interfaces";
 
 interface IProps {
@@ -7,23 +5,14 @@ interface IProps {
 }
 
 export const CompLineBlock = ({ lineBlockDataItem }: IProps) => {
-	const { appData, setAppData } = useContext(AppContext);
-
-	const handleBlankOut = () => {
-		lineBlockDataItem.lines = [];
-		const _appData = structuredClone(appData);
-		setAppData(_appData);
-	};
 
 	return (
-		<p>
-			this line block: {lineBlockDataItem.lines.length}{" "}
-			<span
-				className="cursor-pointer underline"
-				onClick={() => handleBlankOut()}
-			>
-				blank out
-			</span>
-		</p>
+		<div className="bg-gray-200 text-orange-700 text-xs mb-3 font-mono py-2 px-4 w-fit">
+			{lineBlockDataItem.lines.map(line => {
+				return (
+					<div>{line}</div>
+				)
+			})}
+		</div>
 	);
 };

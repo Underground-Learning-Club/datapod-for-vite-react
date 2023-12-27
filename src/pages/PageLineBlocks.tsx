@@ -7,7 +7,7 @@ export const PageLineBlocks = () => {
 
 	return (
 		<>
-			<p>Number of LineBlocks: {appData.lineBlockDataItems.length}</p>
+			<p className="mb-3">Number of LineBlocks: {appData.lineBlockDataItems.length}</p>
 
 			{appData.lineBlockDataItems.map((lineBlockDataItem, index) => {
 				return (
