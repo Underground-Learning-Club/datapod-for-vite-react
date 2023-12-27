@@ -18,7 +18,7 @@
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true
 	},
-	"include": ["src", "share/qtools/qstr.ts", "backend/classes"],
+	"include": ["src", "share/qtools/qstr.ts", "backend/classes", "import2/*.txt"],
 	"references": [
 		{
 			"path": "./tsconfig.node.json"

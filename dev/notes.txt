@@ -34,3 +34,5 @@
 	- parse data into items
 - backend sends this data in appData
 - frontend displays data
+
+- enable import to have any depth of directories

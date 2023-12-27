@@ -17,9 +17,11 @@
 	"nodemonConfig": {
 		"watch": [
 			"backend",
+			"import",
+			"import2",
 			"package.json"
 		],
-		"ext": "ts",
+		"ext": "ts, txt",
 		"exec": "tsx backend/api/index.ts"
 	},
 	"dependencies": {
