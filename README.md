@@ -1,6 +1,8 @@
-# Datapod for Vite React
+# Datapod-for-Vite-React CORE
 
-is a light-weight, self-contained web framework with which you can create fast database-powered web applications with user login, self-validating forms, easy-to-create pages. 
+**Datapod-for-Vite-React CORE** is an experimentation ground for new Datapod projects and it is the project that generates the Datapod for Vite React framework. This generation takes place by pressing a button which makes a copy of itself, then initializes a process which deletes all unnecessary files which do not belong to the **Datapod for Vite React** project, and makes final tweaks to create a new version of **Datapod for Vite React** that is ready to download and use.
+
+**Datapod for Vite React** is a light-weight, self-contained web framework with which you can create fast database-powered web applications with user login, self-validating forms, easy-to-create pages. 
 
 ## Datapod
 

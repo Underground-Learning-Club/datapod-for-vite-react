@@ -11,9 +11,11 @@
 	- x create entireContent
 	- x switch to share and qtools
 	- x new page: "Datapod Content"
-	- .. create DatapodManager
+	- .. rename core
+	- >> create DatapodManager
 		- .. make line blocks
-	- .. show schemas and items
+		- .. show schemas and items
+		
 	- .. make infrastructure to pass (1) file name and (2) number of lines to frontend via appData
 	- parse data into items
 - backend sends this data in appData

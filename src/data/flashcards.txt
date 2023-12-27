@@ -1,11 +1,90 @@
 ** Flashcards
+Category
 Front
 Back
+Pronunciation
 
-==flashcard
-the house
-das Haus
+==fc
+da
+What is that called?
+Hvad hedder det?
+veLL hiTHa TEE
 
-==flashcard
-the mouse
-die Maus
+==fc
+da
+Hello, my name is Edward
+Goddag, jeg hedder Edward
+goo-DAY JIGH-hiTHa Edward
+
+==fc
+da
+No, I am from America, but I live in Berlin. 
+Nej, jeg er fra America, men jeg bor i Berlin.
+NIGH, jai eh fra America, men jigh BOR ee Berlin
+
+==fc
+da
+Good evening, Sara.
+God aften, Sara.
+go-AFFdn
+
+==fc
+da
+I'm learning Danish.
+jeg laerer dansk.
+jai lehrer densk
+
+==fc
+da
+It is easy to read and write Danish, but it is hard to pronounce Danish correctly.
+Det er let at laese og skrive dansk, men det er svaert at udtale dansk korrekt.
+day er lit o layze o skreeva densk, meh day er svairt o oo-TAY-leh densk korrekt
+
+==fc
+da
+Hi Sara, how are you doing? / Good, thanks.
+Dav Sara, hvordan har du det? / Fint, tak.
+dah-ow sara, vah-denn HAH doo day
+
+==fc
+da
+Two beers, please.
+To øl, tak.
+toh öl tahk
+
+==fc
+da
+I don't understand.
+Undskyld., jeg forstår det ikke.
+OON-skool, ya foh-stow DAY eeg
+
+==fc
+da
+I am a smart guy.
+Jeg er en smart fyr.
+yay er ain smart für
+
+==fc
+da
+Good morning, Sara.
+God morgen, Sara.
+go mourn, Sara
+
+==fc
+da
+I'm doing fine, thank you.
+Jeg har det godt, tak.
+YIGH har de GAWD, tahk.
+
+==fc
+da
+Wonderful
+Glimrende
+GLEEM-en-nah
+
+==fc
+da
+Auf wiedersehen
+Farvel
+far-VELL
+
