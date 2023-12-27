@@ -6,6 +6,7 @@
 	h1 {
 		font-variant: small-caps;
 	}
+
 	code {
 		@apply text-orange-800 bg-gray-300 p-1 text-xs;
 	}
@@ -13,4 +14,22 @@
 
 a.active {
 	color: rgb(228, 228, 228);
+}
+
+table.notation {
+	tbody {
+		tr {
+			td:nth-child(1) {
+				padding-right: 1rem;
+				&:after {
+					content: ':';
+				}
+			}
+			td:nth-child(2) {
+				font-family: courier;
+				color: brown;
+				padding-top: .3rem;
+			}
+		}
+	}
 }
