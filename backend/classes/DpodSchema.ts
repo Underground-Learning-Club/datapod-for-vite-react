@@ -6,6 +6,7 @@ import { Factory } from "./Factory";
 export class DpodSchema {
 	private lineBlock: LineBlock;
 	private idCode: string = '';
+	private label: string = '';
 	private dataTypes: DataType[] = [];
 
 	// ** Flashcards
@@ -16,10 +17,20 @@ export class DpodSchema {
 		this.lineBlock = lineBlock;
 		this.createIdCode();
 		this.createDataTypes();
+		this.debug();
+	}
+
+	public debug() {
+		console.log(`=== DpodSchema ===`);
+		console.log(`idCode: ${this.idCode}`);
+		console.log(`label: ${this.label}`);
+		console.log(`number of datatypes: ${this.dataTypes.length}`);
+		console.log(``);
 	}
 
 	private createIdCode() {
-		this.idCode = qstr.chopLeft(this.lineBlock.getFirstLine(), '**').trim();
+		this.label = qstr.chopLeft(this.lineBlock.getFirstLine(), '**').trim();
+		this.idCode = qstr.forceCamelNotation(this.label);
 	}
 
 	private createDataTypes() {
@@ -35,6 +46,7 @@ export class DpodSchema {
 	public getDataItem() {
 		return {
 			idCode: this.idCode,
+			label: this.label,
 			dataTypes: this.dataTypes.map(m => m.getDataItem())
 		}
 	}

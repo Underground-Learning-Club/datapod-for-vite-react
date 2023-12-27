@@ -10,7 +10,6 @@ export const getAppData = async () => {
 		(async () => {
 			const response = await axios.get(backendUrl);
 			const _appData: IAppData = response.data;
-			console.log(_appData);
 			resolve(_appData);
 		})();
 	});

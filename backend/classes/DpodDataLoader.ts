@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as qstr from '../../share/qtools/qstr';
 import { ILineBlockDataItem } from '../../src/interfaces';
+import { DpodItem } from './DpodItem';
 import { DpodSchema } from './DpodSchema';
 import { LineBlock } from './LineBlock';
 
@@ -9,13 +10,27 @@ export class DpodDataLoader {
 	private lines: string[] = [];
 	private lineBlocks: LineBlock[] = [];
 	private dpodSchemas: DpodSchema[] = [];
+	private dpodItems: DpodItem[] = [];
 
 	constructor(content: string) {
 		this.content = content;
 		this.createLines();
 		this.createLineBlocks();
 		this.createDpodSchemas();
+		this.createItems();
 	}
+
+	private createItems() {
+		for (const lineBlock of this.lineBlocks) {
+			const lineBlockKind = lineBlock.getKind();
+			if (lineBlockKind === 'item') {
+				const dpodItem = new DpodItem(lineBlock);
+				this.dpodItems.push(dpodItem);
+			}
+		}
+
+	}
+
 
 	public getLineBlockDataItems(): ILineBlockDataItem[] {
 		return this.lineBlocks.map(m => m.getLineBlockDataItem());

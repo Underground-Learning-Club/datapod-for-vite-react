@@ -41,6 +41,7 @@ export interface IDataTypeDataItem {
 
 export interface IDpodSchemaDataItem {
 	idCode: string;
+	label: string;
 	dataTypes: IDataTypeDataItem[];
 }
 

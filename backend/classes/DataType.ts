@@ -5,8 +5,9 @@ export class DataType {
 	protected label = '';
 	protected dataTypeIdCode = '';
 
-	constructor(idCode: string) {
-		this.idCode = idCode;
+	constructor(label: string) {
+		this.label = label;
+		this.idCode = qstr.forceCamelNotation(this.label);
 	}
 
 	public getDataItem() {

@@ -9,7 +9,7 @@ export const CompDpodSchemaItem = ({ dpodSchemaDataItem }:IProps) => {
 	return (
 		<table className="dpodSchema">
 			<tbody>
-				<tr><td className="title">{dpodSchemaDataItem.idCode}</td></tr>
+				<tr><td className="title">{dpodSchemaDataItem.label}</td></tr>
 				<tr><td>
 					{dpodSchemaDataItem.dataTypes.map((dataType, index) => {
 						return (
