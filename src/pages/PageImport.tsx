@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
+import { CompLineBlock } from "../components/CompLineBlock";
 
 export const PageImport = () => {
 	const { appData } = useContext(AppContext);
@@ -32,7 +33,25 @@ export const PageImport = () => {
 			/>
 
 			<h2>Line blocks</h2>
+			<div className="ml-6">
+				<p className="mb-3">
+					Number of LineBlocks: {appData.lineBlockDataItems.length}
+				</p>
+				{appData.lineBlockDataItems.map((lineBlockDataItem, index) => {
+					return (
+						<div key={index}>
+							<CompLineBlock
+								lineBlockDataItem={lineBlockDataItem}
+							/>
+						</div>
+					);
+				})}
+			</div>
+
 			<h2>Datapod content</h2>
+			<div className="ml-6">
+coming...
+			</div>
 		</div>
 	);
 };
