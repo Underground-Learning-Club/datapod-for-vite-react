@@ -1,4 +1,5 @@
 import { DataType } from "./DataType";
+import * as qstr from '../../share/qtools/qstr.js';
 
 export class DataTypeLine extends DataType {
 
@@ -6,5 +7,13 @@ export class DataTypeLine extends DataType {
 
 	constructor(idCode:string, dataTypeIdCode: string) {
 		super(idCode, dataTypeIdCode);
+	}
+
+	public getDataItem() {
+		return {
+			label: qstr.forceTitleNotation(this.idCode),
+			idCode: this.idCode,
+			dataTypeIdCode: "line"
+		}
 	}
 }
