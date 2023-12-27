@@ -19,5 +19,5 @@ export const backendPort = (): number => {
 }
 
 export const importDirectory = (): string => {
-	return 'import2';
+	return 'import';
 }

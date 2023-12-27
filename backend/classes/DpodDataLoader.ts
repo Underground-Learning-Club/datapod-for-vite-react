@@ -51,6 +51,11 @@ export class DpodDataLoader {
 				isRecordingLineBlock = false;
 			}
 		}
+
+		// record last one
+		if (isRecordingLineBlock) {
+			this.lineBlocks.push(lineBlock);
+		}
 	}
 
 	public createDpodSchemas(): void {
