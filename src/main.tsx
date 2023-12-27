@@ -13,6 +13,7 @@ import { PageFiles } from "./pages/PageFiles.tsx";
 import { PageEntireContent } from "./pages/PageEntireContent.tsx";
 import { PageDatapodContent } from "./pages/PageDatapodContent.tsx";
 import { PageLineBlocks } from "./pages/PageLineBlocks.tsx";
+import { PageNotation } from "./pages/PageNotation.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
 			{
 				path: "datapod-content",
 				element: <PageDatapodContent />,
+			},
+			{
+				path: "notation",
+				element: <PageNotation/>,
 			},
 			{
 				path: "/",

@@ -4,85 +4,85 @@ Front
 Back
 Pronunciation
 
-==fc
+==flashcard
 da
 What is that called?
 Hvad hedder det?
 veLL hiTHa TEE
 
-==fc
+==flashcard
 da
 Hello, my name is Edward
 Goddag, jeg hedder Edward
 goo-DAY JIGH-hiTHa Edward
 
-==fc
+==flashcard
 da
 No, I am from America, but I live in Berlin. 
 Nej, jeg er fra America, men jeg bor i Berlin.
 NIGH, jai eh fra America, men jigh BOR ee Berlin
 
-==fc
+==flashcard
 da
 Good evening, Sara.
 God aften, Sara.
 go-AFFdn
 
-==fc
+==flashcard
 da
 I'm learning Danish.
 jeg laerer dansk.
 jai lehrer densk
 
-==fc
+==flashcard
 da
 It is easy to read and write Danish, but it is hard to pronounce Danish correctly.
 Det er let at laese og skrive dansk, men det er svaert at udtale dansk korrekt.
 day er lit o layze o skreeva densk, meh day er svairt o oo-TAY-leh densk korrekt
 
-==fc
+==flashcard
 da
 Hi Sara, how are you doing? / Good, thanks.
 Dav Sara, hvordan har du det? / Fint, tak.
 dah-ow sara, vah-denn HAH doo day
 
-==fc
+==flashcard
 da
 Two beers, please.
 To øl, tak.
 toh öl tahk
 
-==fc
+==flashcard
 da
 I don't understand.
 Undskyld., jeg forstår det ikke.
 OON-skool, ya foh-stow DAY eeg
 
-==fc
+==flashcard
 da
 I am a smart guy.
 Jeg er en smart fyr.
 yay er ain smart für
 
-==fc
+==flashcard
 da
 Good morning, Sara.
 God morgen, Sara.
 go mourn, Sara
 
-==fc
+==flashcard
 da
 I'm doing fine, thank you.
 Jeg har det godt, tak.
 YIGH har de GAWD, tahk.
 
-==fc
+==flashcard
 da
 Wonderful
 Glimrende
 GLEEM-en-nah
 
-==fc
+==flashcard
 da
 Auf wiedersehen
 Farvel

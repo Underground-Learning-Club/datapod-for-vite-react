@@ -8,6 +8,7 @@ export const Nav = () => {
 			<li><NavLink to="/entire-content">Entire Content</NavLink></li>
 			<li><NavLink to="/line-blocks">Line Blocks</NavLink></li>
 			<li><NavLink to="/datapod-content">Datapod Content</NavLink></li>
+			<li><NavLink to="/notation">Notation</NavLink></li>
 		</ul>
 	</nav>;
 };

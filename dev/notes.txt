@@ -16,11 +16,14 @@
 	- x reload as LineBlock classes
 	- x test tsx in CompLineBlock
 	- x switch from JsonAppData
-	- .. list out line blocks
+	- x list out line blocks
 	- >> create DatapodManager
-		- .. make page Line Blocks
-		- .. make line blocks
-		- .. show schemas and items
+		- x make page Line Blocks
+		- x make line blocks
+		- .. make notation page
+		- .. implement single/plural with notation page
+		- .. record and show schemas and items
+		- enable abbreviations (fc for flashcard)
 	- .. make infrastructure to pass (1) file name and (2) number of lines to frontend via appData
 	- parse data into items
 - backend sends this data in appData
