@@ -9,12 +9,9 @@ import "./index.scss";
 import { PageWelcome } from "./pages/PageWelcome.tsx";
 import { Page404 } from "./pages/Page404.tsx";
 import { AppProvider } from "./AppContext.tsx";
-import { PageFiles } from "./pages/PageFiles.tsx";
-import { PageEntireContent } from "./pages/PageEntireContent.tsx";
-import { PageDatapodContent } from "./pages/PageDatapodContent.tsx";
-import { PageLineBlocks } from "./pages/PageLineBlocks.tsx";
 import { PageNotation } from "./pages/PageNotation.tsx";
 import { PageImport } from "./pages/PageImport.tsx";
+import { PageInfo } from "./pages/PageInfo.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -33,6 +30,10 @@ const router = createBrowserRouter([
 			{
 				path: "import",
 				element: <PageImport/>,
+			},
+			{
+				path: "info",
+				element: <PageInfo/>,
 			},
 			{
 				path: "/",

@@ -25,8 +25,8 @@
 		- x be able to switch import directory
 		- x fix read all
 		- x change /data to /import
-		- .. make import page
-		- make admin page
+		- x make import page
+		- .. make admin page
 		- welcome page empty
 		- .. create array of schemaDataItems, dataItems
 		- .. record and show schemas and items
