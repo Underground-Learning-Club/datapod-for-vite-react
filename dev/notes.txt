@@ -1,35 +1,7 @@
 - x recreate site from createBrowserRouter
 - >> make basic DpodParser class to parse line-only items from .txt files in the /data directory
-	- x add dpod data to the data directory
-	- x first just a simple appData
-	- x show appidcode with appcontext
-	- x list files that are in directory
-	- x info to files
-	- x getEntireContent
-	- x add appdata link
-	- x show entireContent
-	- x create entireContent
-	- x switch to share and qtools
-	- x new page: "Datapod Content"
-	- x rename core
-	- x make appModel with async
-	- x reload as LineBlock classes
-	- x test tsx in CompLineBlock
-	- x switch from JsonAppData
-	- x list out line blocks
-	- >> create DatapodManager
-		- x make page Line Blocks
-		- x make line blocks
-		- x make notation page work
-		- x implement single/plural with notation page
-		- x be able to switch import directory
-		- x fix read all
-		- x change /data to /import
-		- x make import page
-		- .. make admin page
-		- welcome page empty
-		- .. create array of schemaDataItems, dataItems
-		- .. record and show schemas and items
+	- .. create array of schemaDataItems, dataItems
+	- .. record and show schemas and items
 
 
 		- notation page: show all variations with singular/plural as well
@@ -40,3 +12,5 @@
 - frontend displays data
 
 - enable import to have any depth of directories
+
+- add readme to 
