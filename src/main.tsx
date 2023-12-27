@@ -12,6 +12,7 @@ import { AppProvider } from "./AppContext.tsx";
 import { PageFiles } from "./pages/PageFiles.tsx";
 import { PageEntireContent } from "./pages/PageEntireContent.tsx";
 import { PageDatapodContent } from "./pages/PageDatapodContent.tsx";
+import { PageLineBlocks } from "./pages/PageLineBlocks.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
 			{
 				path: "entire-content",
 				element: <PageEntireContent />,
+			},
+			{
+				path: "line-blocks",
+				element: <PageLineBlocks />,
 			},
 			{
 				path: "datapod-content",

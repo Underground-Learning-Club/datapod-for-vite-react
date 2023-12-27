@@ -1,5 +1,5 @@
 - x recreate site from createBrowserRouter
-- .. make basic DpodParser class to parse line-only items from .txt files in the /data directory
+- >> make basic DpodParser class to parse line-only items from .txt files in the /data directory
 	- x add dpod data to the data directory
 	- x first just a simple appData
 	- x show appidcode with appcontext
@@ -11,11 +11,11 @@
 	- x create entireContent
 	- x switch to share and qtools
 	- x new page: "Datapod Content"
-	- .. rename core
+	- x rename core
 	- >> create DatapodManager
+		- .. make page Line Blocks
 		- .. make line blocks
 		- .. show schemas and items
-		
 	- .. make infrastructure to pass (1) file name and (2) number of lines to frontend via appData
 	- parse data into items
 - backend sends this data in appData
