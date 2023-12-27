@@ -368,3 +368,34 @@ export const chopLeft = (main: string, textToChop: string) => {
 	}
 	return main;
 };
+
+export const getSingularPluralSyntaxVariations = (itemTypeIdCode: string, prefix: string = 'the') => {
+	const camelPlural = itemTypeIdCode;
+	const camelSingular = qstr.forceSingular(camelPlural);
+	return {
+		[`${prefix}CamelPlural`]: camelPlural,
+		[`${prefix}CamelSingular`]: camelSingular,
+		[`${prefix}PascalPlural`]: qstr.forcePascalNotation(camelPlural),
+		[`${prefix}PascalSingular`]: qstr.forcePascalNotation(camelSingular),
+		[`${prefix}TitlePlural`]: qstr.forceTitleNotation(camelPlural),
+		[`${prefix}TitleSingular`]: qstr.forceTitleNotation(camelSingular),
+		[`${prefix}TextPlural`]: qstr.forceTextNotation(camelPlural),
+		[`${prefix}TextSingular`]: qstr.forceTextNotation(camelSingular),
+		[`${prefix}AllcapsSingular`]: camelSingular.toUpperCase(),
+		[`${prefix}AllcapsPlural`]: camelPlural.toUpperCase(),
+	}
+}
+
+
+// convert quarterReports to quarterReport
+export const forceSingular = (potentialPluralNotation: string) => {
+	return qstr.chopRight(potentialPluralNotation, 's');
+}
+
+// convert quarterReport to quarterReports
+export const forcePlural = (potentialSingularNotation: string) => {
+	if (!potentialSingularNotation.endsWith('s')) {
+		return `${potentialSingularNotation}s`;
+	}
+	return potentialSingularNotation;
+}
