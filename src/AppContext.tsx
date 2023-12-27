@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { IAppData, blankAppData } from "./interfaces";
-import * as appconfig from '../share/appconfig';
-import axios from 'axios';
+import { getAppData } from "./AppModel";
 
 interface IAppContext {
 	appData: IAppData;
@@ -13,15 +12,12 @@ interface IAppProvider {
 
 export const AppContext = createContext<IAppContext>({} as IAppContext);
 
-const backendUrl = `http://localhost:${appconfig.backendPort()}/appData`;
-
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [appData, setAppData] = useState<IAppData>(blankAppData);
 
 	useEffect(() => {
 		(async () => {
-			const response = await axios.get(backendUrl);
-			const _appData = response.data;
+			const _appData = await getAppData();
 			setAppData(_appData);
 		})();
 	}, []);

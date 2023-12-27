@@ -12,6 +12,8 @@ export const PageLineBlocks = () => {
 				return (
 					<div key={index}>
 						<p>nnn</p>
+						{/* <p>nnn: {lineBlock.lines[0]}</p> */}
+						{/* <p>test: {lineBlock.getTest()}</p> */}
 					</div>
 				);
 			})}

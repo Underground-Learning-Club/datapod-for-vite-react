@@ -12,4 +12,8 @@ export class LineBlock {
 	addLine(line: string) {
 		this.lines.push(line);
 	}
+
+	getTest() {
+		return 'this is a line block';
+	}
 }
