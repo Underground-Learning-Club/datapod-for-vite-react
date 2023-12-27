@@ -27,12 +27,6 @@ export class LineBlock {
 		return this.lines = [];
 	}
 
-	public getJsx() {
-		return (
-			<p onClick={() => this.blankOutLines()}>dkjdkjf</p>
-		)
-	}
-
 	public static instantiateLineBlock(lineBlockDataItem: any) {
 		const lineBlock = new LineBlock();
 		lineBlock.setDataItem(lineBlockDataItem);

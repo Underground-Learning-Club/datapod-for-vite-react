@@ -11,7 +11,7 @@ export const PageLineBlocks = () => {
 			{appData.lineBlocks.map((lineBlock, index) => {
 				return (
 					<div key={index}>
-						<div className="inline-block cursor-pointer">{lineBlock.getJsx()} ({lineBlock.getNumberOfLines()})</div>
+						<div className="inline-block cursor-pointer">nnn ({lineBlock.getNumberOfLines()})</div>
 					</div>
 				);
 			})}
