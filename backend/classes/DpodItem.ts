@@ -83,11 +83,18 @@ export class DpodItem {
 		}
 	}
 
+	private getJsonDataFieldText() {
+		const jsonDataLines = [];
+		for (const dataType of this.dataTypes) {
+			jsonDataLines.push(`${dataType.getJsonDataLine()}`);
+		}
+		return jsonDataLines.join(',\n');
+	}
+
 	public getJsonData() {
 		return `
 {
-	"id": "nnn",
-	"field01": "nnn"
+${this.getJsonDataFieldText()}
 }
 		`.trim();
 	}

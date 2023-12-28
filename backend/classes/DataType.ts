@@ -16,6 +16,14 @@ export class DataType {
 		return this.label;
 	}
 
+	private getTextValue() {
+		return this.value ? this.value : '';
+	}
+	
+	public getJsonDataLine() {
+		return `\t"${this.idCode}": "${this.getTextValue()}"`
+	}
+
 	public getDataItem() {
 		return {
 			label: qstr.forceTitleNotation(this.idCode),

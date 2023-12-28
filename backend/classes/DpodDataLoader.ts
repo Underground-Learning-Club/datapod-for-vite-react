@@ -29,11 +29,11 @@ export class DpodDataLoader {
 		const keys = Object.keys(this.dpodItemGroups);
 		for (const key of keys) {
 			const dpodItems: DpodItem[] = this.dpodItemGroups[key];
-			let jsonData = '';
+			const jsonDataTexts = [];
 			for (const dpodItem of dpodItems) {
-				jsonData += dpodItem.getJsonData();
+				jsonDataTexts.push(dpodItem.getJsonData());
 			}
-			this.jsonData[key] = jsonData;
+			this.jsonData[key] = jsonDataTexts.join(',\n');
 		}
 	}
 
