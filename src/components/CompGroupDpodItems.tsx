@@ -13,6 +13,12 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 	const [displayFormat, setDisplayFormat] =
 		useState<DisplayFormatType>("json");
 
+	const handleMenuSelect = (desiredDisplayForm: DisplayFormatType) => {
+		if (desiredDisplayForm !== displayFormat) {
+			setDisplayFormat(desiredDisplayForm);
+		}
+	}
+
 	return (
 		<section className="groupDpodItems">
 			<h3 className="text-xl mb-2 flex gap-4">
@@ -29,6 +35,7 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 								? "selected"
 								: "unselected"
 						}
+						onClick={() => handleMenuSelect('table')}
 					>
 						table
 					</span>
@@ -36,6 +43,7 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 						className={
 							displayFormat === "json" ? "selected" : "unselected"
 						}
+						onClick={() => handleMenuSelect('json')}
 					>
 						JSON
 					</span>
