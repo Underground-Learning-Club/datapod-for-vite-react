@@ -2,7 +2,8 @@
 - >> make basic DpodParser class to parse line-only items from .txt files in the /data directory
 	- x import into items
 	- x display flat first
-	- .. restyle records
+	- x restyle records
+	- .. make mock menu table/JSON
 	- .. show records: table | JSON | CSV | Datapod
 	- add validation
 	- make archive button
