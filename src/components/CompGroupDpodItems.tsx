@@ -4,11 +4,11 @@ interface IProps {
 }
 export const CompGroupDpodItems = ({ group }: IProps) => {
 	return (
-		<>
-			<p>
+		<section className="groupDpodItems">
+			<h3 className="text-xl mb-2">
 				{group.dpodItems.length} {group.idCode}
-			</p>
-			<table className="groupDpodItems">
+			</h3>
+			<table>
 				<thead>
 					{group.dpodItems.map((dpodItem, index: number) => {
 						return (
@@ -50,6 +50,6 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 					})}
 				</tbody>
 			</table>
-		</>
+		</section>
 	);
 };

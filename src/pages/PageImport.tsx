@@ -103,7 +103,6 @@ export const PageImport = () => {
 					<div className="ml-6 mt-4">
 						{appData.dpodItemGroupDataItems.map(
 							(group, index) => {
-								// return <div key={index}>{group.idCode} = {group.dpodItems.length}</div>;
 								return <CompGroupDpodItems group={group} key={index} />
 							}
 						)}
