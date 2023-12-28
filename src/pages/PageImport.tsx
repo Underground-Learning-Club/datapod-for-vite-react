@@ -13,6 +13,8 @@ export const PageImport = () => {
 		area04: true,
 	});
 
+	console.log(appData.dpodItemGroupDataItems);
+
 	const handleToggleArea = (areaIdCode: string) => {
 		areas[areaIdCode] = !areas[areaIdCode];
 		const _areas = structuredClone(areas);
@@ -81,21 +83,33 @@ export const PageImport = () => {
 				4. Datapod content generated
 			</h2>
 			{areas.area04 && (
-				<div className="ml-6">
-					<h3 className="text-xl mb-2">Schemas</h3>
-					<div className="flex gap-3">
-						{appData.dpodSchemaDataItems.map(
-							(dpodSchemaDataItem, index) => {
-								return (
-									<CompDpodSchemaItem
-										dpodSchemaDataItem={dpodSchemaDataItem}
-										key={index}
-									/>
-								);
+				<>
+					<div className="ml-6">
+						<h3 className="text-xl mb-2">Schemas</h3>
+						<div className="flex gap-3">
+							{appData.dpodSchemaDataItems.map(
+								(dpodSchemaDataItem, index) => {
+									return (
+										<CompDpodSchemaItem
+											dpodSchemaDataItem={
+												dpodSchemaDataItem
+											}
+											key={index}
+										/>
+									);
+								}
+							)}
+						</div>
+					</div>
+					<div className="ml-6 mt-4">
+						{appData.dpodItemGroupDataItems.map(
+							(group, index) => {
+								return <div key={index}>nnn</div>;
 							}
 						)}
+						nnn
 					</div>
-				</div>
+				</>
 			)}
 		</div>
 	);

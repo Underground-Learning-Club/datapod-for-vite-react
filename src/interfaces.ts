@@ -17,7 +17,7 @@ export interface IAppData {
 	entireContent: string;
 	lineBlockDataItems: ILineBlockDataItem[];
 	dpodSchemaDataItems: any[];
-	dpodItemGroupDataItems: {};
+	dpodItemGroupDataItems: any[];
 }
 
 export const blankAppData = {
@@ -27,7 +27,8 @@ export const blankAppData = {
 	fileObjects: [],
 	entireContent: '',
 	lineBlockDataItems: [],
-	dpodSchemaDataItems: []
+	dpodSchemaDataItems: [],
+	dpodItemGroupDataItems: []
 }
 
 export interface ISchemaField {
