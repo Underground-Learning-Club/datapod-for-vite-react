@@ -11,7 +11,7 @@ interface IProps {
 
 export const CompGroupDpodItems = ({ group }: IProps) => {
 	const [displayFormat, setDisplayFormat] =
-		useState<DisplayFormatType>("table");
+		useState<DisplayFormatType>("json");
 
 	return (
 		<section className="groupDpodItems">
@@ -23,10 +23,22 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 					)}
 				</span>
 				<span className="flex gap-3 text-[1rem] items-center bg-gray-300 px-4 rounded shadow-inner shadow-gray-700">
-					<p className={displayFormat === "table" ? "selected" : ""}>
+					<span
+						className={
+							displayFormat === "table"
+								? "selected"
+								: "unselected"
+						}
+					>
 						table
-					</p>
-					<p>JSON</p>
+					</span>
+					<span
+						className={
+							displayFormat === "json" ? "selected" : "unselected"
+						}
+					>
+						JSON
+					</span>
 				</span>
 			</h3>
 			<table>

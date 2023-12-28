@@ -29,6 +29,19 @@ div.pageImport {
 }
 
 section.groupDpodItems {
+	h3 {
+		.selected {
+			color: #000;
+			font-weight: bold;
+		}
+		.unselected {
+			color: #333;
+			font-weight: normal;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	}
+
 	table {
 		border: 2px solid #111;
 		margin-bottom: 1rem;
@@ -39,6 +52,7 @@ section.groupDpodItems {
 					background-color: #888;
 					padding: .5rem;
 					border: 1px solid #111;
+
 				}
 			}
 		}
