@@ -14,8 +14,6 @@ export const PageImport = () => {
 		area04: true,
 	});
 
-	console.log(appData.dpodItemGroupDataItems);
-
 	const handleToggleArea = (areaIdCode: string) => {
 		areas[areaIdCode] = !areas[areaIdCode];
 		const _areas = structuredClone(areas);

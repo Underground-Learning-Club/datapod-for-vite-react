@@ -10,7 +10,7 @@ export class DpodItem {
 	private singularSchemaIdCode: string = '';
 	private dpodSchema!: DpodSchema;
 	private dpodDataLoader;
-	private dataTypes: DataType[] = [];
+	public dataTypes: DataType[] = [];
 
 	constructor(lineBlock: LineBlock, dpodDataLoader: DpodDataLoader) {
 		this.lineBlock = lineBlock;
@@ -26,9 +26,10 @@ export class DpodItem {
 		if (this.dpodSchema) {
 			let index = 0;
 			for (const _dataType of _dataTypes) {
+				const __dataType = new DataType(_dataType.getLabel());
 				const fieldLine = fieldLines[index];
-				_dataType.setValue(fieldLine);
-				this.dataTypes.push(_dataType);
+				__dataType.setValue(fieldLine);
+				this.dataTypes.push(__dataType);
 				index++;
 			}
 		}

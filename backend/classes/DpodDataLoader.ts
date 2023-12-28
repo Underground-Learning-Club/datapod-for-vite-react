@@ -44,6 +44,7 @@ export class DpodDataLoader {
 			if (lineBlockKind === 'item') {
 				const dpodItem = new DpodItem(lineBlock, this);
 				this.dpodItems.push(dpodItem);
+				console.log(this.dpodItems.map(m => m.dataTypes[1].value));
 			}
 		}
 
@@ -117,10 +118,11 @@ export class DpodDataLoader {
 		const ra = [];
 		const keys = Object.keys(this.dpodItemGroups);
 		for (const key of keys) {
-			const dpodItems:DpodItem[] = this.dpodItemGroups[key];
+			const dpodItems: DpodItem[] = this.dpodItemGroups[key];
+			const dpodDataItems = dpodItems.map(m => m.getDataItem())
 			ra.push({
 				idCode: key,
-				dpodItems: dpodItems.map(m => m.getDataItem())
+				dpodItems: dpodDataItems
 			})
 		}
 		return ra;

@@ -1,7 +1,6 @@
 ** Persons
 Full Name
 Description
-Url
 
 ==person
 Kevlin Henny
