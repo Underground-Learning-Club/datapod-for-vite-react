@@ -53,4 +53,8 @@ export class DpodSchema {
 			dataTypes: this.dataTypes.map(m => m.getDataItem())
 		}
 	}
+	
+	public getDataTypes() {
+		return this.dataTypes;
+	}
 }

@@ -15,7 +15,8 @@ export class DataTypeUnknown extends DataType {
 		return {
 			label: qstr.forceTitleNotation(this.idCode),
 			idCode: this.idCode,
-			dataTypeIdCode: this.dataTypeIdCode + `(${this.attemptedDataTypeIdCode})`
+			dataTypeIdCode: this.dataTypeIdCode + `(${this.attemptedDataTypeIdCode})`,
+			value: ''
 		}
 	}
 }

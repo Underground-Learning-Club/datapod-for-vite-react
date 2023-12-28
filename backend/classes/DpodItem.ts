@@ -2,6 +2,7 @@ import { LineBlock } from "./LineBlock";
 import * as qstr from '../../share/qtools/qstr';
 import { DpodDataLoader } from "./DpodDataLoader";
 import { DpodSchema } from "./DpodSchema";
+import { DataType } from "./DataType";
 
 export class DpodItem {
 	private lineBlock: LineBlock;
@@ -9,12 +10,26 @@ export class DpodItem {
 	private singularSchemaIdCode: string = '';
 	private dpodSchema!: DpodSchema;
 	private dpodDataLoader;
+	private dataTypes: DataType[] = [];
 
 	constructor(lineBlock: LineBlock, dpodDataLoader: DpodDataLoader) {
 		this.lineBlock = lineBlock;
 		this.dpodDataLoader = dpodDataLoader;
 		this.createProperties();
 		this.defineDpodSchema();
+		this.createDataTypes();
+	}
+
+	private createDataTypes() {
+		const fieldLines = this.lineBlock.getAllLinesButFirst();
+		const _dataTypes = structuredClone(this.dpodSchema.getDataTypes());
+		let index = 0;
+		for (const fieldLine of fieldLines) {
+			const _dataType = _dataTypes[index];
+			_dataType.setValue(fieldLine);
+			this.dataTypes.push(_dataType);
+			index++;
+		}
 	}
 
 	private defineDpodSchema() {
@@ -44,5 +59,10 @@ export class DpodItem {
 		console.log(``);
 	}
 
-
+	public getDataItem() {
+		return {
+			singularSchemaIdCode: this.singularSchemaIdCode,
+			dataTypes: this.dataTypes.map(m => m.getDataItem())
+		}
+	}
 }
