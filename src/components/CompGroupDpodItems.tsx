@@ -55,6 +55,14 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 					>
 						CSV
 					</span>
+					<span
+						className={
+							displayFormat === "datapod" ? "selected" : "unselected"
+						}
+						onClick={() => handleMenuSelect("datapod")}
+					>
+						Datapod
+					</span>
 				</span>
 			</h3>
 			<section className="mb-12">
@@ -120,6 +128,11 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 				{displayFormat === "csv" && (
 					<textarea readOnly className="w-full bg-[#fff] p-4 border border-gray-800 outline-none">
 						CSV...
+					</textarea>
+				)}
+				{displayFormat === "datapod" && (
+					<textarea readOnly className="w-full bg-[#fff] p-4 border border-gray-800 outline-none">
+						DATAPOD...
 					</textarea>
 				)}
 			</section>
