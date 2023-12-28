@@ -5,13 +5,19 @@ export class DpodItem {
 	private lineBlock: LineBlock;
 	private schemaIdCode: string = '';
 	private singularSchemaIdCode: string = '';
+	private dpodSchema = null;
 
 	constructor(lineBlock: LineBlock) {
 		this.lineBlock = lineBlock;
-		this.createSchemaIdCode();
+		this.createProperties();
+		this.defineDpodSchema();
 	}
 
-	private createSchemaIdCode() {
+	private defineDpodSchema() {
+
+	}
+
+	private createProperties() {
 		this.singularSchemaIdCode = qstr.chopLeft(this.lineBlock.getFirstLine(), '==').trim();
 		this.schemaIdCode = qstr.forcePascalNotation(qstr.forcePlural(this.singularSchemaIdCode));
 	}

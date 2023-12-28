@@ -17,7 +17,6 @@ export class DpodSchema {
 		this.lineBlock = lineBlock;
 		this.createIdCode();
 		this.createDataTypes();
-		this.debug();
 	}
 
 	public debug() {
