@@ -4,6 +4,7 @@
 	- x display flat first
 	- x restyle records
 	- .. make mock menu table/JSON
+		- .. fix only one
 	- .. show records: table | JSON | CSV | Datapod
 	- add validation
 	- make archive button

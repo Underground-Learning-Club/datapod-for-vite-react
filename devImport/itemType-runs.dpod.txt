@@ -9,11 +9,13 @@ Duration
 20231221run
 7K Lankwitz Loop
 2023-12-21
+7K
 
 ==run
 20231218run
 7K Lankwitz Loop
 2023-12-18
+7K
 
 ==run
 20231213run

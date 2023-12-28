@@ -11,13 +11,13 @@ interface IProps {
 
 export const CompGroupDpodItems = ({ group }: IProps) => {
 	const [displayFormat, setDisplayFormat] =
-		useState<DisplayFormatType>("json");
+		useState<DisplayFormatType>("table");
 
 	const handleMenuSelect = (desiredDisplayForm: DisplayFormatType) => {
 		if (desiredDisplayForm !== displayFormat) {
 			setDisplayFormat(desiredDisplayForm);
 		}
-	}
+	};
 
 	return (
 		<section className="groupDpodItems">
@@ -35,7 +35,7 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 								? "selected"
 								: "unselected"
 						}
-						onClick={() => handleMenuSelect('table')}
+						onClick={() => handleMenuSelect("table")}
 					>
 						table
 					</span>
@@ -43,52 +43,86 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 						className={
 							displayFormat === "json" ? "selected" : "unselected"
 						}
-						onClick={() => handleMenuSelect('json')}
+						onClick={() => handleMenuSelect("json")}
 					>
 						JSON
 					</span>
+					<span
+						className={
+							displayFormat === "csv" ? "selected" : "unselected"
+						}
+						onClick={() => handleMenuSelect("csv")}
+					>
+						CSV
+					</span>
 				</span>
 			</h3>
-			<table>
-				<thead>
-					{group.dpodItems.map((dpodItem: any, index: number) => {
-						return (
-							<React.Fragment key={index}>
-								{index === 0 && (
-									<tr>
-										{dpodItem.dataTypes.map(
-											(dataType: any, index: number) => {
-												return (
-													<th key={index}>
-														{dataType.label}
-													</th>
-												);
-											}
-										)}
-									</tr>
-								)}
-							</React.Fragment>
-						);
-					})}
-				</thead>
-				<tbody>
-					{group.dpodItems.map((dpodItem: any, index: number) => {
-						return (
-							<tr key={index}>
-								{dpodItem.dataTypes.map(
-									(dataType: any, index: number) => {
-										return (
-											<td key={index}>
-												{dataType.value}
-											</td>
-										);
-									}
-								)}
-							</tr>
-						);
-					})}
-				</tbody>
-			</table>
+			<section className="mb-12">
+				{displayFormat === "table" && (
+					<table>
+						<thead>
+							{group.dpodItems.map(
+								(dpodItem: any, index: number) => {
+									return (
+										<React.Fragment key={index}>
+											{index === 0 && (
+												<tr>
+													{dpodItem.dataTypes.map(
+														(
+															dataType: any,
+															index: number
+														) => {
+															return (
+																<th key={index}>
+																	{
+																		dataType.label
+																	}
+																</th>
+															);
+														}
+													)}
+												</tr>
+											)}
+										</React.Fragment>
+									);
+								}
+							)}
+						</thead>
+						<tbody>
+							{group.dpodItems.map(
+								(dpodItem: any, index: number) => {
+									return (
+										<tr key={index}>
+											{dpodItem.dataTypes.map(
+												(
+													dataType: any,
+													index: number
+												) => {
+													return (
+														<td key={index}>
+															{dataType.value}
+														</td>
+													);
+												}
+											)}
+										</tr>
+									);
+								}
+							)}
+						</tbody>
+					</table>
+				)}
+				{displayFormat === "json" && (
+					<textarea readOnly className="w-full bg-[#fff] p-4 border border-gray-800 outline-none">
+						JSON...
+					</textarea>
+				)}
+				{displayFormat === "csv" && (
+					<textarea readOnly className="w-full bg-[#fff] p-4 border border-gray-800 outline-none">
+						CSV...
+					</textarea>
+				)}
+			</section>
 		</section>
 	);
 };
