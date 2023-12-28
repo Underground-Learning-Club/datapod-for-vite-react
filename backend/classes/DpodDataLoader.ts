@@ -14,6 +14,7 @@ export class DpodDataLoader {
 	private dpodItems: DpodItem[] = [];
 	private dpodItemGroups: any = {};
 	private jsonData: any = {};
+	private csvData: any = {};
 
 	constructor(content: string) {
 		this.content = content;
@@ -23,6 +24,7 @@ export class DpodDataLoader {
 		this.createItems();
 		this.createDpodItemGroups();
 		this.createJsonData();
+		this.createCsvData();
 	}
 
 	private createJsonData() {
@@ -34,6 +36,24 @@ export class DpodDataLoader {
 				jsonDataTexts.push(dpodItem.getJsonData());
 			}
 			this.jsonData[key] = jsonDataTexts.join(',\n');
+		}
+	}
+
+	private createCsvData() {
+		const keys = Object.keys(this.dpodItemGroups);
+		for (const key of keys) {
+			const dpodItems: DpodItem[] = this.dpodItemGroups[key];
+			const csvDataTexts = [];
+			let index = 0;
+			let labelLine = '';
+			for (const dpodItem of dpodItems) {
+				if (index === 0) {
+					labelLine = dpodItem.getCsvLabelLine();
+				}
+				csvDataTexts.push(dpodItem.getCsvData());
+				index++;
+			}
+			this.csvData[key] = labelLine + '\n' + csvDataTexts.join('\n');
 		}
 	}
 
@@ -139,7 +159,7 @@ export class DpodDataLoader {
 				label: titlePlural,
 				singleLabel: titleSingular,
 				jsonData: this.jsonData[key],
-				csvData: '(csv data)',
+				csvData: this.csvData[key],
 				datapodData: '(datapod data)',
 				dpodItems: dpodDataItems
 			})

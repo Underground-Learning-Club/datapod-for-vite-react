@@ -98,4 +98,20 @@ ${this.getJsonDataFieldText()}
 }
 		`.trim();
 	}
+
+	public getCsvLabelLine() {
+		const csvDataFields = [];
+		for (const dataType of this.dataTypes) {
+			csvDataFields.push(`"${dataType.getLabel()}"`);
+		}
+		return csvDataFields.join(',');
+	}
+
+	public getCsvData() {
+		const csvDataFields = [];
+		for (const dataType of this.dataTypes) {
+			csvDataFields.push(`"${dataType.getTextValue()}"`);
+		}
+		return csvDataFields.join(',');
+	}
 }

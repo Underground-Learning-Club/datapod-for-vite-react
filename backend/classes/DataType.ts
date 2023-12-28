@@ -16,7 +16,7 @@ export class DataType {
 		return this.label;
 	}
 
-	private getTextValue() {
+	public getTextValue() {
 		return this.value ? this.value : '';
 	}
 	
