@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import * as qstr from "../../share/qtools/qstr";
+import React from "react";
 
 type DisplayFormatType = "table" | "json" | "csv" | "datapod";
 
@@ -15,9 +16,16 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 	return (
 		<section className="groupDpodItems">
 			<h3 className="text-xl mb-2 flex gap-4">
-				<span>{qstr.smartPlural(group.dpodItems.length, group.singleLabel)}</span>
+				<span>
+					{qstr.smartPlural(
+						group.dpodItems.length,
+						group.singleLabel
+					)}
+				</span>
 				<span className="flex gap-3 text-[1rem] items-center bg-gray-300 px-4 rounded shadow-inner shadow-gray-700">
-					<p>table</p>
+					<p className={displayFormat === "table" ? "selected" : ""}>
+						table
+					</p>
 					<p>JSON</p>
 				</span>
 			</h3>
@@ -25,23 +33,21 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 				<thead>
 					{group.dpodItems.map((dpodItem: any, index: number) => {
 						return (
-							<>
+							<React.Fragment key={index}>
 								{index === 0 && (
-									<tr key={index}>
+									<tr>
 										{dpodItem.dataTypes.map(
 											(dataType: any, index: number) => {
 												return (
-													<>
-														<th key={index}>
-															{dataType.label}
-														</th>
-													</>
+													<th key={index}>
+														{dataType.label}
+													</th>
 												);
 											}
 										)}
 									</tr>
 								)}
-							</>
+							</React.Fragment>
 						);
 					})}
 				</thead>
