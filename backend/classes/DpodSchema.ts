@@ -27,6 +27,10 @@ export class DpodSchema {
 		console.log(``);
 	}
 
+	public getIdCode() {
+		return this.idCode;
+	}
+
 	private createIdCode() {
 		this.label = qstr.chopLeft(this.lineBlock.getFirstLine(), '**').trim();
 		this.idCode = qstr.forceCamelNotation(this.label);

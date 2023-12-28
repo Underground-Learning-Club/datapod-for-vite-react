@@ -18,13 +18,19 @@ export class DpodDataLoader {
 		this.createLineBlocks();
 		this.createDpodSchemas();
 		this.createItems();
+		this.debug();
+	}
+
+	public debug() {
+		console.log(`=== DpodDataLoader ===`);
+		console.log(`number of dpodItems: ${this.dpodItems.length}`);
 	}
 
 	private createItems() {
 		for (const lineBlock of this.lineBlocks) {
 			const lineBlockKind = lineBlock.getKind();
 			if (lineBlockKind === 'item') {
-				const dpodItem = new DpodItem(lineBlock);
+				const dpodItem = new DpodItem(lineBlock, this);
 				this.dpodItems.push(dpodItem);
 			}
 		}
