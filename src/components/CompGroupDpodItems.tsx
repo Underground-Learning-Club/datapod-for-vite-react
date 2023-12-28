@@ -121,19 +121,13 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 					</table>
 				)}
 				{displayFormat === "json" && (
-					<textarea readOnly className="w-full bg-[#fff] p-4 border border-gray-800 outline-none">
-						JSON...
-					</textarea>
+					<textarea readOnly value={group.jsonData} className="w-full bg-[#fff] p-4 border border-gray-800 outline-none"/>
 				)}
 				{displayFormat === "csv" && (
-					<textarea readOnly className="w-full bg-[#fff] p-4 border border-gray-800 outline-none">
-						CSV...
-					</textarea>
+					<textarea readOnly value={group.csvData} className="w-full bg-[#fff] p-4 border border-gray-800 outline-none"/>
 				)}
 				{displayFormat === "datapod" && (
-					<textarea readOnly className="w-full bg-[#fff] p-4 border border-gray-800 outline-none">
-						DATAPOD...
-					</textarea>
+					<textarea readOnly value={group.datapodData} className="w-full bg-[#fff] p-4 border border-gray-800 outline-none"/>
 				)}
 			</section>
 		</section>

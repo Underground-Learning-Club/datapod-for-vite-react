@@ -3,9 +3,11 @@
 	- x import into items
 	- x display flat first
 	- x restyle records
-	- .. make mock menu table/JSON
-		- .. fix only one
-	- .. show records: table | JSON | CSV | Datapod
+	- x make mock menu table/JSON
+	- >> show records: table | JSON | CSV | Datapod
+		- .. json
+		- csv
+		- datapod
 	- add validation
 	- make archive button
 

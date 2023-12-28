@@ -124,6 +124,9 @@ export class DpodDataLoader {
 				idCode: key,
 				label: titlePlural,
 				singleLabel: titleSingular,
+				jsonData: '(json data)',
+				csvData: '(csv data)',
+				datapodData: '(datapod data)',
 				dpodItems: dpodDataItems
 			})
 		}
