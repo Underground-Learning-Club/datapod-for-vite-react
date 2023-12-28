@@ -7,9 +7,13 @@
 	- >> show records: table | JSON | CSV | Datapod
 		- x json
 		- x csv
-		- .. xml
-		- datapod
-	- add id
+		- x xml
+		- x datapod
+	- .. add id
+	- add paragraph type
+	- add multiline input
+
+
 	- add validation
 	- make archive button
 
