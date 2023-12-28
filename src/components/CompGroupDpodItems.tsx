@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import * as qstr from '../../share/qtools/qstr';
+
 interface IProps {
 	group: any;
 }
@@ -6,17 +8,17 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 	return (
 		<section className="groupDpodItems">
 			<h3 className="text-xl mb-2">
-				{group.dpodItems.length} {group.idCode}
+				{qstr.smartPlural(group.dpodItems.length, group.singleLabel)}
 			</h3>
 			<table>
 				<thead>
-					{group.dpodItems.map((dpodItem, index: number) => {
+					{group.dpodItems.map((dpodItem:any, index: number) => {
 						return (
 							<>
 								{index === 0 && (
 									<tr key={index}>
 										{dpodItem.dataTypes.map(
-											(dataType, index) => {
+											(dataType:any, index:number) => {
 												return (
 													<>
 														<th key={index}>
@@ -33,11 +35,11 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 					})}
 				</thead>
 				<tbody>
-					{group.dpodItems.map((dpodItem, index: number) => {
+					{group.dpodItems.map((dpodItem:any, index: number) => {
 						return (
 							<tr key={index}>
 								{dpodItem.dataTypes.map(
-									(dataType, index: number) => {
+									(dataType:any, index: number) => {
 										return (
 											<td key={index}>
 												{dataType.value}

@@ -118,8 +118,12 @@ export class DpodDataLoader {
 		for (const key of keys) {
 			const dpodItems: DpodItem[] = this.dpodItemGroups[key];
 			const dpodDataItems = dpodItems.map(m => m.getDataItem())
+			const titlePlural = qstr.forceTitleNotation(key);
+			const titleSingular = qstr.forceSingular(titlePlural);
 			ra.push({
 				idCode: key,
+				label: titlePlural,
+				singleLabel: titleSingular,
 				dpodItems: dpodDataItems
 			})
 		}

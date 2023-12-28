@@ -399,3 +399,11 @@ export const forcePlural = (potentialSingularNotation: string) => {
 	}
 	return potentialSingularNotation;
 }
+
+export const smartPlural = (number: number, singularNoun: string, pluralNoun: string = '') => {
+	let r = '';
+	if (pluralNoun === '') pluralNoun = singularNoun + 's';
+	r += number + ' ';
+	r += number === 1 ? singularNoun : pluralNoun;
+	return r;
+}
