@@ -22,13 +22,15 @@ export class DpodItem {
 
 	private createDataTypes() {
 		const fieldLines = this.lineBlock.getAllLinesButFirst();
-		const _dataTypes = structuredClone(this.dpodSchema.getDataTypes());
-		let index = 0;
-		for (const fieldLine of fieldLines) {
-			const _dataType = _dataTypes[index];
-			_dataType.setValue(fieldLine);
-			this.dataTypes.push(_dataType);
-			index++;
+		if (this.dpodSchema) {
+			const _dataTypes = this.dpodSchema.getDataTypes();
+			let index = 0;
+			for (const fieldLine of fieldLines) {
+				const _dataType = _dataTypes[index];
+				_dataType.setValue(fieldLine);
+				this.dataTypes.push(_dataType);
+				index++;
+			}
 		}
 	}
 
@@ -39,7 +41,7 @@ export class DpodItem {
 			}
 		}
 	}
-	
+
 	public getSchemaIdCode() {
 		return this.schemaIdCode;
 	}

@@ -20,9 +20,6 @@ app.get('/appdata', (_req, res) => {
 	const entireContent = apptools.getEntireContent(fileObjects);
 	const dpodDataLoader = new DpodDataLoader(entireContent);
 
-	// const dpodSchemaDataItems = dpodDataLoader.getDpodSchemaDataItems();
-	// console.log(JSON.stringify(dpodSchemaDataItems, null, 2));
-
 	const appJsonData: IAppData = {
 		appIdCode: appconfig.appIdCode(),
 		frontendPort: appconfig.frontendPort(),
@@ -30,7 +27,8 @@ app.get('/appdata', (_req, res) => {
 		fileObjects,
 		entireContent,
 		lineBlockDataItems: dpodDataLoader.getLineBlockDataItems(),
-		dpodSchemaDataItems: dpodDataLoader.getDpodSchemaDataItems()
+		dpodSchemaDataItems: dpodDataLoader.getDpodSchemaDataItems(),
+		dpodItemGroupDataItems: dpodDataLoader.getDpodItemGroupDataItems()
 	}
 	res.status(200).json(appJsonData);
 });

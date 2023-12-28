@@ -25,7 +25,6 @@ export class DpodDataLoader {
 
 	private createDpodItemGroups() {
 		for (const dpodItem of this.dpodItems) {
-			console.log(dpodItem.getSchemaIdCode());
 			const schemaIdCode = dpodItem.getSchemaIdCode();
 			if (!this.dpodItemGroups.hasOwnProperty(schemaIdCode)) {
 				this.dpodItemGroups[schemaIdCode] = [];
@@ -49,7 +48,6 @@ export class DpodDataLoader {
 		}
 
 	}
-
 
 	public getLineBlockDataItems(): ILineBlockDataItem[] {
 		return this.lineBlocks.map(m => m.getLineBlockDataItem());
@@ -113,6 +111,16 @@ export class DpodDataLoader {
 			dpodSchemaDataItems.push(dpodSchema.getDataItem());
 		}
 		return dpodSchemaDataItems;
+	}
+
+	public getDpodItemGroupDataItems() {
+		const ra = [];
+		const keys = Object.keys(this.dpodItemGroups);
+		for (const key of keys) {
+			const dpodItems = this.dpodItemGroups[key];
+			console.log(key, dpodItems.length);
+		}
+		return ra;
 	}
 
 }
