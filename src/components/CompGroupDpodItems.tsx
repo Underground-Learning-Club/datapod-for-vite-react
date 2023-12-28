@@ -12,15 +12,23 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 				<thead>
 					{group.dpodItems.map((dpodItem, index: number) => {
 						return (
-							<tr key={index}>
-								{dpodItem.dataTypes.map((dataType, index) => {
-									return (
-										<th key={index}>
-											{dataType.label}
-										</th>
-									);
-								})}
-							</tr>
+							<>
+								{index === 0 && (
+									<tr key={index}>
+										{dpodItem.dataTypes.map(
+											(dataType, index) => {
+												return (
+													<>
+														<th key={index}>
+															{dataType.label}
+														</th>
+													</>
+												);
+											}
+										)}
+									</tr>
+								)}
+							</>
 						);
 					})}
 				</thead>
