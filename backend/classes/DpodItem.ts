@@ -114,4 +114,14 @@ ${this.getJsonDataFieldText()}
 		}
 		return csvDataFields.join(',');
 	}
+
+	public getXmlData() {
+		const xmlDataFields = [];
+		for (const dataType of this.dataTypes) {
+			xmlDataFields.push(`\t\t<${dataType.getIdCode()}>${dataType.getTextValue()}</${dataType.getIdCode()}>`);
+		}
+		return `\t<${this.singularSchemaIdCode}>
+${xmlDataFields.join('\n')}
+\t</${this.singularSchemaIdCode}>`
+	}
 }

@@ -15,6 +15,7 @@ export class DpodDataLoader {
 	private dpodItemGroups: any = {};
 	private jsonData: any = {};
 	private csvData: any = {};
+	private xmlData: any = {};
 
 	constructor(content: string) {
 		this.content = content;
@@ -25,6 +26,27 @@ export class DpodDataLoader {
 		this.createDpodItemGroups();
 		this.createJsonData();
 		this.createCsvData();
+		this.createXmlData();
+	}
+
+	private createXmlData() {
+		const keys = Object.keys(this.dpodItemGroups);
+		for (const key of keys) {
+			const dpodItems: DpodItem[] = this.dpodItemGroups[key];
+			const xmlDataTexts = [];
+			let index = 0;
+			let firstLine = '';
+			let lastLine = '';
+			for (const dpodItem of dpodItems) {
+				if (index === 0) {
+					firstLine = `<?xml version="1.0" encoding="UTF-8"?>\n<${dpodItem.getSchemaIdCode()}>`;
+					lastLine = `</${dpodItem.getSchemaIdCode()}>`;
+				}
+				xmlDataTexts.push(dpodItem.getXmlData());
+				index++;
+			}
+			this.xmlData[key] = firstLine + '\n' + xmlDataTexts.join('\n') + '\n' + lastLine;
+		}
 	}
 
 	private createJsonData() {
@@ -160,6 +182,7 @@ export class DpodDataLoader {
 				singleLabel: titleSingular,
 				jsonData: this.jsonData[key],
 				csvData: this.csvData[key],
+				xmlData: this.xmlData[key],
 				datapodData: '(datapod data)',
 				dpodItems: dpodDataItems
 			})

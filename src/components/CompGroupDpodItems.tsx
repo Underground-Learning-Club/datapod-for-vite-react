@@ -3,7 +3,7 @@ import { useState } from "react";
 import * as qstr from "../../share/qtools/qstr";
 import React from "react";
 
-type DisplayFormatType = "table" | "json" | "csv" | "datapod";
+type DisplayFormatType = "table" | "json" | "csv" | "xml" | "datapod";
 
 interface IProps {
 	group: any;
@@ -54,6 +54,14 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 						onClick={() => handleMenuSelect("csv")}
 					>
 						CSV
+					</span>
+					<span
+						className={
+							displayFormat === "xml" ? "selected" : "unselected"
+						}
+						onClick={() => handleMenuSelect("xml")}
+					>
+						XML
 					</span>
 					<span
 						className={
@@ -125,6 +133,9 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 				)}
 				{displayFormat === "csv" && (
 					<textarea readOnly value={group.csvData} className="h-[20rem] w-full bg-[#fff] p-4 border border-gray-800 outline-none text-orange-700 font-mono"/>
+				)}
+				{displayFormat === "xml" && (
+					<textarea readOnly value={group.xmlData} className="h-[20rem] w-full bg-[#fff] p-4 border border-gray-800 outline-none text-orange-700 font-mono"/>
 				)}
 				{displayFormat === "datapod" && (
 					<textarea readOnly value={group.datapodData} className="h-[20rem] w-full bg-[#fff] p-4 border border-gray-800 outline-none text-orange-700 font-mono"/>

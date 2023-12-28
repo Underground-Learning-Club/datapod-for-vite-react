@@ -5,8 +5,9 @@
 	- x restyle records
 	- x make mock menu table/JSON
 	- >> show records: table | JSON | CSV | Datapod
-		- .. json
-		- csv
+		- x json
+		- x csv
+		- .. xml
 		- datapod
 	- add id
 	- add validation

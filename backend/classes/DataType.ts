@@ -12,6 +12,10 @@ export class DataType {
 		this.idCode = qstr.forceCamelNotation(this.label);
 	}
 
+	public getIdCode() {
+		return this.idCode;
+	}
+
 	public getLabel() {
 		return this.label;
 	}
