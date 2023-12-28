@@ -1,7 +1,7 @@
 - x recreate site from createBrowserRouter
 - >> make basic DpodParser class to parse line-only items from .txt files in the /data directory
 	- x import into items
-	- .. display flat first
+	- x display flat first
 	- .. show records: table | JSON | CSV | Datapod
 	- add validation
 	- make archive button

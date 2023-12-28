@@ -44,10 +44,8 @@ export class DpodDataLoader {
 			if (lineBlockKind === 'item') {
 				const dpodItem = new DpodItem(lineBlock, this);
 				this.dpodItems.push(dpodItem);
-				console.log(this.dpodItems.map(m => m.dataTypes[1].value));
 			}
 		}
-
 	}
 
 	public getLineBlockDataItems(): ILineBlockDataItem[] {
