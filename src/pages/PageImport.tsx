@@ -100,7 +100,7 @@ export const PageImport = () => {
 							)}
 						</div>
 					</div>
-					<div className="ml-6 mt-4">
+					<div className="ml-6 mt-12">
 						{appData.dpodItemGroupDataItems.map(
 							(group, index) => {
 								return <CompGroupDpodItems group={group} key={index} />

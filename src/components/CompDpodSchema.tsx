@@ -14,7 +14,7 @@ export const CompDpodSchemaItem = ({ dpodSchemaDataItem }:IProps) => {
 					{dpodSchemaDataItem.dataTypes.map((dataType, index) => {
 						return (
 							<div key={index}>
-								<p>{dataType.idCode}:<span className="text-orange-700">{dataType.dataTypeIdCode}</span></p>
+								<p>{dataType.idCode}:<span className="text-blue-700">{dataType.dataTypeIdCode}</span></p>
 							</div>
 						)
 					})}
