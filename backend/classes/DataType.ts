@@ -23,9 +23,13 @@ export class DataType {
 	public getTextValue() {
 		return this.value ? this.value : '';
 	}
-	
+
 	public getJsonDataLine() {
-		return `\t"${this.idCode}": "${this.getTextValue()}"`
+		return `\t"${this.idCode}": "${this.getTextValue()}"`;
+	}
+
+	public getDatapodDataLine() {
+		return `${this.idCode}::${this.getTextValue()}`;
 	}
 
 	public getDataItem() {

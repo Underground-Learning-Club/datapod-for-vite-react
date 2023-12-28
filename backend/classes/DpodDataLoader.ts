@@ -16,6 +16,7 @@ export class DpodDataLoader {
 	private jsonData: any = {};
 	private csvData: any = {};
 	private xmlData: any = {};
+	private datapodData: any = {};
 
 	constructor(content: string) {
 		this.content = content;
@@ -27,6 +28,7 @@ export class DpodDataLoader {
 		this.createJsonData();
 		this.createCsvData();
 		this.createXmlData();
+		this.createDatapodData();
 	}
 
 	private createXmlData() {
@@ -58,6 +60,18 @@ export class DpodDataLoader {
 				jsonDataTexts.push(dpodItem.getJsonData());
 			}
 			this.jsonData[key] = jsonDataTexts.join(',\n');
+		}
+	}
+
+	private createDatapodData() {
+		const keys = Object.keys(this.dpodItemGroups);
+		for (const key of keys) {
+			const dpodItems: DpodItem[] = this.dpodItemGroups[key];
+			const datapodDataTexts = [];
+			for (const dpodItem of dpodItems) {
+				datapodDataTexts.push(dpodItem.getDatapodData());
+			}
+			this.datapodData[key] = datapodDataTexts.join('\n\n');
 		}
 	}
 
@@ -183,7 +197,7 @@ export class DpodDataLoader {
 				jsonData: this.jsonData[key],
 				csvData: this.csvData[key],
 				xmlData: this.xmlData[key],
-				datapodData: '(datapod data)',
+				datapodData: this.datapodData[key],
 				dpodItems: dpodDataItems
 			})
 		}

@@ -91,11 +91,26 @@ export class DpodItem {
 		return jsonDataLines.join(',\n');
 	}
 
+	private getDatapodDataFieldText() {
+		const datapodDataLines = [];
+		for (const dataType of this.dataTypes) {
+			datapodDataLines.push(`${dataType.getDatapodDataLine()}`);
+		}
+		return datapodDataLines.join('\n');
+	}
+
 	public getJsonData() {
 		return `
 {
 ${this.getJsonDataFieldText()}
 }
+		`.trim();
+	}
+
+	public getDatapodData() {
+		return `
+==${this.singularSchemaIdCode}
+${this.getDatapodDataFieldText()}
 		`.trim();
 	}
 
