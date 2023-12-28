@@ -13,6 +13,7 @@ export class DpodDataLoader {
 	private dpodSchemas: DpodSchema[] = [];
 	private dpodItems: DpodItem[] = [];
 	private dpodItemGroups: any = {};
+	private jsonData: any = {};
 
 	constructor(content: string) {
 		this.content = content;
@@ -21,6 +22,19 @@ export class DpodDataLoader {
 		this.createDpodSchemas();
 		this.createItems();
 		this.createDpodItemGroups();
+		this.createJsonData();
+	}
+
+	private createJsonData() {
+		const keys = Object.keys(this.dpodItemGroups);
+		for (const key of keys) {
+			const dpodItems: DpodItem[] = this.dpodItemGroups[key];
+			let jsonData = '';
+			for (const dpodItem of dpodItems) {
+				jsonData += dpodItem.getJsonData();
+			}
+			this.jsonData[key] = jsonData;
+		}
 	}
 
 	private createDpodItemGroups() {
@@ -124,7 +138,7 @@ export class DpodDataLoader {
 				idCode: key,
 				label: titlePlural,
 				singleLabel: titleSingular,
-				jsonData: '(json data)',
+				jsonData: this.jsonData[key],
 				csvData: '(csv data)',
 				datapodData: '(datapod data)',
 				dpodItems: dpodDataItems

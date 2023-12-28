@@ -82,4 +82,13 @@ export class DpodItem {
 			dataTypes: this.dataTypes.map(m => m.getDataItem())
 		}
 	}
+
+	public getJsonData() {
+		return `
+{
+	"id": "nnn",
+	"field01": "nnn"
+}
+		`.trim();
+	}
 }
