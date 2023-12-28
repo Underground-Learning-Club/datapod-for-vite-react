@@ -16,6 +16,10 @@ export class DataType {
 		return this.idCode;
 	}
 
+	public getValue() {
+		return this.value;
+	}
+
 	public getLabel() {
 		return this.label;
 	}

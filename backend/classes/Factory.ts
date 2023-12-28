@@ -7,12 +7,16 @@ import { DataTypeUnknown } from './DataTypeUnknown';
 import { DataTypeDate } from './DataTypeDate';
 import { DataTypeUrl } from './DataTypeUrl';
 import { DataTypeDuration } from './DataTypeDuration';
+import { DataTypeSuuid } from './DataTypeSuuid';
 
 export class Factory {
 
 	public static instantiateDataType(dataTypeDefinitionLine: string) {
 		if (!dataTypeDefinitionLine.includes(';')) {
 			switch (dataTypeDefinitionLine) {
+				case 'suuid':
+					dataTypeDefinitionLine = 'Suuid;suuid';
+					break;
 				case 'Date':
 					dataTypeDefinitionLine += ';date';
 					break;
@@ -39,6 +43,8 @@ export class Factory {
 				return new DataTypeKilometers(idCode);
 			case 'date':
 				return new DataTypeDate(idCode);
+			case 'suuid':
+				return new DataTypeSuuid(idCode);
 			case 'wn':
 			case 'wholeNumber':
 				return new DataTypeWholeNumber(idCode);

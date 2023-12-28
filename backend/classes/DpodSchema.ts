@@ -38,6 +38,8 @@ export class DpodSchema {
 
 	private createDataTypes() {
 		const fieldLines = this.lineBlock.getAllLinesButFirst();
+		const dataTypeSuuid = Factory.instantiateDataType('suuid');
+		this.dataTypes.push(dataTypeSuuid);
 		for (const fieldLine of fieldLines) {
 			const dataType = Factory.instantiateDataType(fieldLine);
 			if (dataType) {
@@ -53,7 +55,7 @@ export class DpodSchema {
 			dataTypes: this.dataTypes.map(m => m.getDataItem())
 		}
 	}
-	
+
 	public getDataTypes() {
 		return this.dataTypes;
 	}

@@ -1,9 +1,9 @@
 import { DataType } from "./DataType";
 import * as qstr from '../../share/qtools/qstr';
 
-export class DataTypeUuid extends DataType {
+export class DataTypeSuuid extends DataType {
 
-	protected dataTypeIdCode = 'uuid';
+	protected dataTypeIdCode = 'suuid';
 
 	constructor(idCode:string) {
 		super(idCode);

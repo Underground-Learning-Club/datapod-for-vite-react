@@ -24,11 +24,15 @@ export class DpodItem {
 		const _dataTypes = this.dpodSchema.getDataTypes();
 		const fieldLines = this.lineBlock.getAllLinesButFirst();
 		if (this.dpodSchema) {
-			let index = 0;
+			let index = -1;
 			for (const _dataType of _dataTypes) {
 				const __dataType = new DataType(_dataType.getLabel());
-				const fieldLine = fieldLines[index];
-				__dataType.setValue(fieldLine);
+				if (index >= 0) {
+					const fieldLine = fieldLines[index];
+					__dataType.setValue(fieldLine);
+				} else {
+					__dataType.setValue(qstr.generateShortUUID());
+				}
 				this.dataTypes.push(__dataType);
 				index++;
 			}
