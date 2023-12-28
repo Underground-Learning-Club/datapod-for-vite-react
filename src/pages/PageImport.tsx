@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { AppContext } from "../AppContext";
 import { CompLineBlock } from "../components/CompLineBlock";
 import { CompDpodSchemaItem } from "../components/CompDpodSchema";
+import { CompGroupDpodItems } from "../components/CompGroupDpodItems";
 
 export const PageImport = () => {
 	const { appData } = useContext(AppContext);
@@ -104,7 +105,8 @@ export const PageImport = () => {
 					<div className="ml-6 mt-4">
 						{appData.dpodItemGroupDataItems.map(
 							(group, index) => {
-								return <div key={index}>{group.idCode} = {group.dpodItems.length}</div>;
+								// return <div key={index}>{group.idCode} = {group.dpodItems.length}</div>;
+								return <CompGroupDpodItems group={group} key={index} />
 							}
 						)}
 					</div>
