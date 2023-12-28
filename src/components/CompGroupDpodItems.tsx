@@ -17,8 +17,11 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 					{group.dpodItems.map((dpodItem, index) => {
 						return (
 							<tr>
-								<td>nnn</td>
-								<td>ooo</td>
+								{dpodItem.dataTypes.map((dataType, index) => {
+									return (
+										<td key={index}>nnn</td>	
+)
+								})}
 							</tr>
 						)
 					})}
