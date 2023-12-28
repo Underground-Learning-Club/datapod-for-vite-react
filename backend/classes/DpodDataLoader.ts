@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as qstr from '../../share/qtools/qstr';
 import { ILineBlockDataItem } from '../../src/interfaces';
@@ -11,6 +12,7 @@ export class DpodDataLoader {
 	private lineBlocks: LineBlock[] = [];
 	private dpodSchemas: DpodSchema[] = [];
 	private dpodItems: DpodItem[] = [];
+	private dpodItemGroups: any = {};
 
 	constructor(content: string) {
 		this.content = content;
@@ -18,7 +20,18 @@ export class DpodDataLoader {
 		this.createLineBlocks();
 		this.createDpodSchemas();
 		this.createItems();
-		this.debug();
+		this.createDpodItemGroups();
+	}
+
+	private createDpodItemGroups() {
+		for (const dpodItem of this.dpodItems) {
+			console.log(dpodItem.getSchemaIdCode());
+			const schemaIdCode = dpodItem.getSchemaIdCode();
+			if (!this.dpodItemGroups.hasOwnProperty(schemaIdCode)) {
+				this.dpodItemGroups[schemaIdCode] = [];
+			}
+			this.dpodItemGroups[schemaIdCode].push(dpodItem);
+		}
 	}
 
 	public debug() {
@@ -93,9 +106,9 @@ export class DpodDataLoader {
 	public getDpodSchemas() {
 		return this.dpodSchemas
 	}
-	
+
 	public getDpodSchemaDataItems() {
-		const dpodSchemaDataItems:any[] = [];
+		const dpodSchemaDataItems: any[] = [];
 		for (const dpodSchema of this.dpodSchemas) {
 			dpodSchemaDataItems.push(dpodSchema.getDataItem());
 		}

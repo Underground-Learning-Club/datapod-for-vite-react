@@ -24,6 +24,10 @@ export class DpodItem {
 			}
 		}
 	}
+	
+	public getSchemaIdCode() {
+		return this.schemaIdCode;
+	}
 
 	private createProperties() {
 		this.singularSchemaIdCode = qstr.chopLeft(this.lineBlock.getFirstLine(), '==').trim();
