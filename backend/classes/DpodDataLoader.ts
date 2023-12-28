@@ -114,13 +114,13 @@ export class DpodDataLoader {
 	}
 
 	public getDpodItemGroupDataItems() {
-		const ra = [];
+		const obj:any = {};
 		const keys = Object.keys(this.dpodItemGroups);
 		for (const key of keys) {
-			const dpodItems = this.dpodItemGroups[key];
-			console.log(key, dpodItems.length);
+			const dpodItems:DpodItem[] = this.dpodItemGroups[key];
+			obj[key] = dpodItems.map(m => m.getDataItem());
 		}
-		return ra;
+		return obj;
 	}
 
 }
