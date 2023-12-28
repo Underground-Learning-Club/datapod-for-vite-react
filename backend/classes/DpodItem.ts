@@ -21,6 +21,20 @@ export class DpodItem {
 	}
 
 	private createDataTypes() {
+		const _dataTypes = this.dpodSchema.getDataTypes();
+		const fieldLines = this.lineBlock.getAllLinesButFirst();
+		if (this.dpodSchema) {
+			let index = 0;
+			for (const _dataType of _dataTypes) {
+				const fieldLine = fieldLines[index];
+				_dataType.setValue(fieldLine);
+				this.dataTypes.push(_dataType);
+				index++;
+			}
+		}
+	}
+
+	private createDataTypes2() {
 		const fieldLines = this.lineBlock.getAllLinesButFirst();
 		if (this.dpodSchema) {
 			const _dataTypes = this.dpodSchema.getDataTypes();
