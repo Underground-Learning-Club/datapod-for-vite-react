@@ -85,7 +85,7 @@ export const PageImport = () => {
 				<>
 					<div className="ml-6">
 						<h3 className="text-xl mb-2">Schemas</h3>
-						<div className="flex gap-3">
+						<div className="flex gap-3 flex-wrap">
 							{appData.dpodSchemaDataItems.map(
 								(dpodSchemaDataItem, index) => {
 									return (

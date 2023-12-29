@@ -9,7 +9,8 @@
 		- x csv
 		- x xml
 		- x datapod
-	- .. add id
+	- x add suuid
+	- .. import flashcards and archive, prepare for recording
 	- add paragraph type
 	- add multiline input
 
