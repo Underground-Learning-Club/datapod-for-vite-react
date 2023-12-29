@@ -4,6 +4,8 @@
 
 **Datapod for Vite React** is a light-weight, self-contained web framework with which you can create fast database-powered web applications with user login, self-validating forms, easy-to-create pages. 
 
+![datapodcore001](https://github.com/Underground-Learning-Club/datapod-for-vite-react-core/assets/446574/73dc959b-a151-4ecc-a1a6-55af6daacae4)
+
 ## Datapod
 
 Datapod itself is a framework-agnostic, flexible and strongly-typed approach to data, a project I have been pursuing for over a decade in various languages and frameworks, here are some extant historical relics of some of my various Datapod projects:
