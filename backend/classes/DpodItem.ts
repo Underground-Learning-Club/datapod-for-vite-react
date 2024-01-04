@@ -22,14 +22,24 @@ export class DpodItem {
 
 	private createDataTypes() {
 		const _dataTypes = this.dpodSchema.getDataTypes();
-		console.log(_dataTypes);
 		const fieldLines = this.lineBlock.getAllLinesButFirst();
+		console.log(fieldLines);
 		if (this.dpodSchema) {
 			let index = -1;
 			for (const _dataType of _dataTypes) {
 				const __dataType = new DataType(_dataType.getLabel());
 				if (index >= 0) {
-					const fieldLine = fieldLines[index];
+					let fieldLine = fieldLines[index];
+					if (fieldLine === '[[') {
+						let innerContent = '';
+						let innerFieldLine = '';
+						while (innerFieldLine !== ']]') {
+							innerContent += innerFieldLine + '\n';
+							index++;
+							innerFieldLine = fieldLines[index];
+						}
+						fieldLine = innerContent;
+					}
 					__dataType.setValue(fieldLine);
 				} else {
 					__dataType.setValue(qstr.generateShortUUID());
