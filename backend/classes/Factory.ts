@@ -40,6 +40,7 @@ export class Factory {
 			case 'line':
 				return new DataTypeLine(idCode);
 			case 'p':
+			case 'paragraph':
 				return new DataTypeParagraph(idCode);
 			case 'km':
 			case 'kilometers':

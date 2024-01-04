@@ -19,9 +19,6 @@ export class DpodItem {
 		this.createProperties();
 		this.defineDpodSchema();
 		this.createDataTypes();
-		for (const dataType of this.dataTypes) {
-			console.log('333', dataType.getDataTypeIdCode());
-		}
 	}
 
 	private createDataTypes() {
@@ -30,9 +27,10 @@ export class DpodItem {
 		if (this.dpodSchema) {
 			let index = -1;
 			for (const _dataType of _dataTypes) {
-				console.log('222', _dataType.getDataTypeIdCode());
 				// const __dataType = new DataType(_dataType.getLabel());
-				const __dataType = Factory.instantiateDataType(_dataType.getLabel());
+				const creationLine = _dataType.getLabel() + ';' + _dataType.getDataTypeIdCode();
+				console.log(creationLine);
+				const __dataType = Factory.instantiateDataType(creationLine);
 				if (index >= 0) {
 					let fieldLine = fieldLines[index];
 					if (fieldLine === '[[') {
@@ -49,8 +47,6 @@ export class DpodItem {
 				} else {
 					__dataType.setValue(qstr.generateShortUUID());
 				}
-				console.log('555', _dataType.getDataTypeIdCode());
-				console.log('444', __dataType.getDataTypeIdCode());
 				this.dataTypes.push(__dataType);
 				index++;
 			}

@@ -30,11 +30,11 @@ export class DataType {
 	}
 
 	public getTextValue() {
-		return this.value ? this.value + this.dataTypeIdCode : '';
+		return this.value ? this.value + '(' + this.dataTypeIdCode + ')' : '';
 	}
 
 	public getJsonDataLine() {
-		return `\t"${this.idCode}": "${this.getTextValue()}"(${this.dataTypeIdCode})`;
+		return `\t"${this.idCode}": "${this.getTextValue()}"`;
 	}
 
 	public getDatapodDataLine() {

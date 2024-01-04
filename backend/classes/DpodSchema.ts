@@ -42,7 +42,6 @@ export class DpodSchema {
 		this.dataTypes.push(dataTypeSuuid);
 		for (const fieldLine of fieldLines) {
 			const dataType = Factory.instantiateDataType(fieldLine);
-			console.log('111', dataType.getDataTypeIdCode());
 			if (dataType) {
 				this.dataTypes.push(dataType);
 			}
