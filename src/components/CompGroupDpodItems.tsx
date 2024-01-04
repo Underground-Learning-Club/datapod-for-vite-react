@@ -65,7 +65,9 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 					</span>
 					<span
 						className={
-							displayFormat === "datapod" ? "selected" : "unselected"
+							displayFormat === "datapod"
+								? "selected"
+								: "unselected"
 						}
 						onClick={() => handleMenuSelect("datapod")}
 					>
@@ -115,9 +117,14 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 													index: number
 												) => {
 													return (
-														<td key={index}>
-															{dataType.value}
-														</td>
+														<td
+															key={index}
+															dangerouslySetInnerHTML={{
+																__html: qstr.convertToHtml(
+																	dataType.value
+																),
+															}}
+														></td>
 													);
 												}
 											)}
@@ -129,16 +136,32 @@ export const CompGroupDpodItems = ({ group }: IProps) => {
 					</table>
 				)}
 				{displayFormat === "json" && (
-					<textarea readOnly value={group.jsonData} className="h-[20rem] w-full bg-[#fff] p-4 border border-gray-800 outline-none text-orange-700 font-mono"/>
+					<textarea
+						readOnly
+						value={group.jsonData}
+						className="h-[20rem] w-full bg-[#fff] p-4 border border-gray-800 outline-none text-orange-700 font-mono"
+					/>
 				)}
 				{displayFormat === "csv" && (
-					<textarea readOnly value={group.csvData} className="h-[20rem] w-full bg-[#fff] p-4 border border-gray-800 outline-none text-orange-700 font-mono"/>
+					<textarea
+						readOnly
+						value={group.csvData}
+						className="h-[20rem] w-full bg-[#fff] p-4 border border-gray-800 outline-none text-orange-700 font-mono"
+					/>
 				)}
 				{displayFormat === "xml" && (
-					<textarea readOnly value={group.xmlData} className="h-[20rem] w-full bg-[#fff] p-4 border border-gray-800 outline-none text-orange-700 font-mono"/>
+					<textarea
+						readOnly
+						value={group.xmlData}
+						className="h-[20rem] w-full bg-[#fff] p-4 border border-gray-800 outline-none text-orange-700 font-mono"
+					/>
 				)}
 				{displayFormat === "datapod" && (
-					<textarea readOnly value={group.datapodData} className="h-[20rem] w-full bg-[#fff] p-4 border border-gray-800 outline-none text-orange-700 font-mono"/>
+					<textarea
+						readOnly
+						value={group.datapodData}
+						className="h-[20rem] w-full bg-[#fff] p-4 border border-gray-800 outline-none text-orange-700 font-mono"
+					/>
 				)}
 			</section>
 		</section>

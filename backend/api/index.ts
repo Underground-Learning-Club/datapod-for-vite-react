@@ -6,6 +6,31 @@ import * as apptools from '../apptools.js';
 import * as appconfig from '../appconfig.js';
 import { DpodDataLoader } from '../classes/DpodDataLoader.js';
 
+
+// console.log('overload test');
+
+// class Dtype {
+// 	protected idCode = '';
+// 	constructor() {
+// 		this.idCode = 'basetype'
+// 	}
+// 	public getIdCode() {
+// 		return this.idCode;
+// 	}
+// }
+
+// class DtypeParagraph extends Dtype {
+// 	constructor() {
+// 		super();
+// 		this.idCode = 'paragraphType';
+// 	}
+// }
+
+// const dtype = new Dtype();
+// console.log('111', dtype.getIdCode());
+// const dtypeParagraph = new DtypeParagraph();
+// console.log('222', dtypeParagraph.getIdCode());
+
 const app = express();
 app.use(cors());
 

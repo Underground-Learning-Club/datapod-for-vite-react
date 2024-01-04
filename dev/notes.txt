@@ -1,3 +1,9 @@
 - x add paragraph type so it shows as a datapod type
-- .. read all lines between [[]] as a field
+- x read all lines between [[]] as a field
+- .. adjust all output formats
+	- x table
+	- .. json
+	- csv
+	- xml
+	- datapod
 

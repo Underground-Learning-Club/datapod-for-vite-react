@@ -3,6 +3,7 @@ import * as qstr from '../../share/qtools/qstr';
 import { DpodDataLoader } from "./DpodDataLoader";
 import { DpodSchema } from "./DpodSchema";
 import { DataType } from "./DataType";
+import { Factory } from "./Factory";
 
 export class DpodItem {
 	private lineBlock: LineBlock;
@@ -18,16 +19,20 @@ export class DpodItem {
 		this.createProperties();
 		this.defineDpodSchema();
 		this.createDataTypes();
+		for (const dataType of this.dataTypes) {
+			console.log('333', dataType.getDataTypeIdCode());
+		}
 	}
 
 	private createDataTypes() {
 		const _dataTypes = this.dpodSchema.getDataTypes();
 		const fieldLines = this.lineBlock.getAllLinesButFirst();
-		console.log(fieldLines);
 		if (this.dpodSchema) {
 			let index = -1;
 			for (const _dataType of _dataTypes) {
-				const __dataType = new DataType(_dataType.getLabel());
+				console.log('222', _dataType.getDataTypeIdCode());
+				// const __dataType = new DataType(_dataType.getLabel());
+				const __dataType = Factory.instantiateDataType(_dataType.getLabel());
 				if (index >= 0) {
 					let fieldLine = fieldLines[index];
 					if (fieldLine === '[[') {
@@ -38,12 +43,14 @@ export class DpodItem {
 							index++;
 							innerFieldLine = fieldLines[index];
 						}
-						fieldLine = innerContent;
+						fieldLine = innerContent.trim();
 					}
 					__dataType.setValue(fieldLine);
 				} else {
 					__dataType.setValue(qstr.generateShortUUID());
 				}
+				console.log('555', _dataType.getDataTypeIdCode());
+				console.log('444', __dataType.getDataTypeIdCode());
 				this.dataTypes.push(__dataType);
 				index++;
 			}

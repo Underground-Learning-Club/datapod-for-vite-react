@@ -10,6 +10,11 @@ export class DataType {
 	constructor(label: string) {
 		this.label = label;
 		this.idCode = qstr.forceCamelNotation(this.label);
+		this.dataTypeIdCode = 'BASETYPE';
+	}
+
+	public getDataTypeIdCode() {
+		return this.dataTypeIdCode;
 	}
 
 	public getIdCode() {
@@ -25,11 +30,11 @@ export class DataType {
 	}
 
 	public getTextValue() {
-		return this.value ? this.value : '';
+		return this.value ? this.value + this.dataTypeIdCode : '';
 	}
 
 	public getJsonDataLine() {
-		return `\t"${this.idCode}": "${this.getTextValue()}"`;
+		return `\t"${this.idCode}": "${this.getTextValue()}"(${this.dataTypeIdCode})`;
 	}
 
 	public getDatapodDataLine() {
