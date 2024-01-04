@@ -3,3 +3,10 @@ Category
 Front
 Back
 Pronunciation
+
+==flashcard
+de
+the house
+das Haus
+
+

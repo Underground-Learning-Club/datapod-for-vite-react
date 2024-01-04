@@ -22,6 +22,7 @@ export class DpodItem {
 
 	private createDataTypes() {
 		const _dataTypes = this.dpodSchema.getDataTypes();
+		console.log(_dataTypes);
 		const fieldLines = this.lineBlock.getAllLinesButFirst();
 		if (this.dpodSchema) {
 			let index = -1;

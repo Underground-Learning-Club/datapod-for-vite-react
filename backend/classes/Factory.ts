@@ -8,6 +8,7 @@ import { DataTypeDate } from './DataTypeDate';
 import { DataTypeUrl } from './DataTypeUrl';
 import { DataTypeDuration } from './DataTypeDuration';
 import { DataTypeSuuid } from './DataTypeSuuid';
+import { DataTypeParagraph } from './DataTypeParagraph';
 
 export class Factory {
 
@@ -38,6 +39,8 @@ export class Factory {
 		switch (dataTypeIdCode) {
 			case 'line':
 				return new DataTypeLine(idCode);
+			case 'p':
+				return new DataTypeParagraph(idCode);
 			case 'km':
 			case 'kilometers':
 				return new DataTypeKilometers(idCode);
