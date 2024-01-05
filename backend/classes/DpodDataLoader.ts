@@ -129,7 +129,25 @@ export class DpodDataLoader {
 	private createLineBlocks() {
 		let lineBlock = new LineBlock();
 		let isRecordingLineBlock = false;
+		let isInsideMultilineBlock = false;
 		for (const line of this.lines) {
+
+			// don't let a blank line inside a multiline block end the item
+			if (isInsideMultilineBlock && qstr.isEmpty(line)) {
+				lineBlock.addLine(line);
+				continue;
+			}
+
+			// ignore multiline begin and end markers
+			if (['[[',']]'].includes(line)) {
+				if (line === '[[') {
+					isInsideMultilineBlock = true;
+				}
+				if (line === ']]') {
+					isInsideMultilineBlock = false;
+				}
+				continue;
+			}
 
 			// ignore empty lines in file
 			if (!isRecordingLineBlock && qstr.isEmpty(line)) {

@@ -1,9 +1,3 @@
-** Runs
-ID-Code
-Title
-Date
-Length;km
-Duration
 
 ==run
 20231221run

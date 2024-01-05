@@ -29,7 +29,7 @@ export class DpodItem {
 			for (const _dataType of _dataTypes) {
 				// const __dataType = new DataType(_dataType.getLabel());
 				const creationLine = _dataType.getLabel() + ';' + _dataType.getDataTypeIdCode();
-				console.log(creationLine);
+				console.log('111', creationLine);
 				const __dataType = Factory.instantiateDataType(creationLine);
 				if (index >= 0) {
 					let fieldLine = fieldLines[index];
