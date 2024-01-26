@@ -36,14 +36,15 @@ app.get('/appdata', (_req, res) => {
 });
 
 app.get('/parse-etsite-data', (req, res) => {
+	const etSiteBase = appconfig.etsiteDataRelativePathAndFileName();	
 	const pathAndFileNames = qfil.getFileNamesInDirectory(appconfig.importDirectory());
 	const fileObjects = apptools.getFileObjects(pathAndFileNames);
 	const entireContent = apptools.getEntireContent(fileObjects);
 	const dpodDataLoader = new DpodDataLoader(entireContent);
 	const dataItems = dpodDataLoader.getDpodItemGroupDataItems()
-	apptools.createFile('./export/itemType-runs.json', (apptools.wrapAsArrayForJson((dataItems[0] as any).jsonData)));
-	apptools.createFile('./export/itemType-swims.json', (apptools.wrapAsArrayForJson((dataItems[1] as any).jsonData)));
-	apptools.createFile('./export/itemType-weights.json', (apptools.wrapAsArrayForJson((dataItems[2] as any).jsonData)));
+	apptools.createFile(`${etSiteBase}/itemType-runs.json`, (apptools.wrapAsArrayForJson((dataItems[0] as any).jsonData)));
+	apptools.createFile(`${etSiteBase}/itemType-swims.json`, (apptools.wrapAsArrayForJson((dataItems[1] as any).jsonData)));
+	apptools.createFile(`${etSiteBase}/itemType-weights.json`, (apptools.wrapAsArrayForJson((dataItems[2] as any).jsonData)));
 
 	res.status(200);
 })

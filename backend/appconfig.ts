@@ -20,9 +20,13 @@ export const backendPort = (): number => {
 }
 
 export const importDirectory = (): string => {
-	return 'devImport2';
+	return 'etsiteImport';
 }
 
 export const backendBaseUrl = (): string => {
 	return `http://localhost:${appconfig.backendPort()}`;
+}
+
+export const etsiteDataRelativePathAndFileName = (): string => {
+	return '../edward-tanguay-eu/src/data';
 }
