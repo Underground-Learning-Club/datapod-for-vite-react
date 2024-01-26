@@ -2,7 +2,8 @@
 - .. (1) be able to record runs/swims/weight in edward-tanguay-eu site project, press button in datapod-vite-react-core, three JSON files are created in edward-tanguay-eu site
 	- x delete all configs
 	- x switch to concurrently
-	- .. be able to switch locally
+	- x be able to switch locally
+	- .. save wholeNumber and decimal as numbers, not strings
 	- on edward-tanguay-eu site, make three files: runs, swims, weights
 	- .. read in from edward-tanguay-eu site: site.dpod.txt
 		- enable //
@@ -14,4 +15,5 @@
 
 
 - future todos:
+	- decimal and wholeNumber extend number
 	- be able to put a paragraph field at the end (didn't work)

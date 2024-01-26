@@ -7,5 +7,9 @@ export class DataTypeWholeNumber extends DataType {
 	constructor(idCode:string) {
 		super(idCode);
 	}
+	
+	public getJsonDataLine() {
+		return `\t"${this.idCode}": ${this.getTextValue()}`;
+	}
 
 }

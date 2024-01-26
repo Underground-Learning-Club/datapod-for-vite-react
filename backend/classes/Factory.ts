@@ -25,6 +25,9 @@ export class Factory {
 				case 'Url':
 					dataTypeDefinitionLine += ';url';
 					break;
+				case 'Kilometers':
+					dataTypeDefinitionLine += ';km';
+					break;
 				case 'Duration':
 					dataTypeDefinitionLine += ';duration';
 					break;

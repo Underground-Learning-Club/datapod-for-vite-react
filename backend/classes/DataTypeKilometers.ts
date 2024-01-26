@@ -8,4 +8,9 @@ export class DataTypeKilometers extends DataType {
 		super(idCode);
 	}
 
+	public getJsonDataLine() {
+		return `\t"${this.idCode}": ${this.getTextValue()}`;
+	}
+
+
 }
