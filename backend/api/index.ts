@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import express from 'express';
 import cors from 'cors';
 import { IAppData } from '../../src/interfaces.js';
@@ -32,6 +33,11 @@ app.get('/appdata', (_req, res) => {
 	}
 	res.status(200).json(appJsonData);
 });
+
+app.get('/parse-etsite-data', (req, res) => {
+	console.log('in backend');
+	res.status(200);
+})
 
 app.listen(appconfig.backendPort(), () => {
 	console.log(`---

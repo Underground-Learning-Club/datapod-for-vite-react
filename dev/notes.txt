@@ -3,12 +3,12 @@
 	- x delete all configs
 	- x switch to concurrently
 	- x be able to switch locally
-	- .. save wholeNumber and decimal as numbers, not strings
+	- x save wholeNumber and decimal as numbers, not strings
+	- .. make a button on datapod welcome page: "Parse site data for edward-tanguay-eu site"
 	- on edward-tanguay-eu site, make three files: runs, swims, weights
 	- .. read in from edward-tanguay-eu site: site.dpod.txt
 		- enable //
 		- copy manually to .json files
-	- make a button on datapod welcome page: "Parse site data for edward-tanguay-eu site"
 - (2) display information on edward-tanguay-eu site
 	- Runs page: display all runs, with photos
 	- Fitness page: overview of runs, swims, weight	

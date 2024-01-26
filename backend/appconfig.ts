@@ -1,5 +1,6 @@
 import * as qfil from '../share/qtools/qfil';
 import * as apptools from './apptools';
+import * as appconfig from './appconfig';
 
 export const appIdCode = (): string => {
 	const packageJsonObj = qfil.readJsonFile('./package.json');
@@ -20,4 +21,8 @@ export const backendPort = (): number => {
 
 export const importDirectory = (): string => {
 	return 'devImport2';
+}
+
+export const backendBaseUrl = (): string => {
+	return `http://localhost:${appconfig.backendPort()}`;
 }

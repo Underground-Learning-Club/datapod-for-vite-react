@@ -10,6 +10,10 @@
 	code {
 		@apply text-orange-800 bg-gray-300 p-1 text-xs;
 	}
+
+	button {
+		@apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800;
+	}
 }
 
 @layer components {
@@ -34,6 +38,7 @@ section.groupDpodItems {
 			color: #000;
 			font-weight: bold;
 		}
+
 		.unselected {
 			color: #333;
 			font-weight: normal;
