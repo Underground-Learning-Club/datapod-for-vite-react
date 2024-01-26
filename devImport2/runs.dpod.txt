@@ -1,4 +1,4 @@
-**Runs
+** Runs
 ID-Code
 Title
 Date
@@ -37,4 +37,90 @@ Wanted to run off some fat from the Christmas holidays, so at 4:30 decided to ta
 
 ##33watch
 ]]
+
+** Swims
+Date
+Length;km
+Laps;wn
+
+==swim
+2023-10-21
+1
+40 laps
+
+==swim
+2023-11-11
+1
+40 laps
+
+==swim
+2023-11-18
+1
+40 laps
+
+==swim
+2023-11-25
+1
+40 laps
+
+==swim
+2023-12-02
+1
+40 laps
+
+==swim
+2023-12-16
+1
+40 laps
+
+==swim
+2023-12-27
+1
+40 laps
+
+==swim
+2024-01-06
+1
+40 laps
+
+==swim
+2024-01-13
+1
+40 laps
+
+==swim
+2024-01-20
+1
+40 laps
+
+
+** Weights
+Date
+Kilograms;dec
+
+==weight
+2024-01-03
+88
+
+==weight
+2024-01-22
+87.6
+
+==weight
+2024-01-23
+86.2
+
+==weight
+2024-01-24
+86.1
+
+==weight
+2024-01-25
+86.9
+
+==weight
+2024-01-26
+85.9
+
+
 

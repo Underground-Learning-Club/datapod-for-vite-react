@@ -9,6 +9,7 @@ import { DataTypeUrl } from './DataTypeUrl';
 import { DataTypeDuration } from './DataTypeDuration';
 import { DataTypeSuuid } from './DataTypeSuuid';
 import { DataTypeParagraph } from './DataTypeParagraph';
+import { DataTypeDecimal } from './DataTypeDecimal';
 
 export class Factory {
 
@@ -52,6 +53,9 @@ export class Factory {
 			case 'wn':
 			case 'wholeNumber':
 				return new DataTypeWholeNumber(idCode);
+			case 'dec':
+			case 'decimal':
+				return new DataTypeDecimal(idCode);
 			case 'url':
 				return new DataTypeUrl(idCode);
 			case 'duration':
