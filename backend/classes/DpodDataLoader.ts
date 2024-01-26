@@ -146,6 +146,7 @@ export class DpodDataLoader {
 				if (line === ']]') {
 					isInsideMultilineBlock = false;
 				}
+				lineBlock.addLine(line);
 				continue;
 			}
 

@@ -30,7 +30,7 @@ export class DataType {
 	}
 
 	public getTextValue() {
-		return this.value ? this.value + '(' + this.dataTypeIdCode + ')' : '';
+		return this.value ? this.value : '';
 	}
 
 	public getJsonDataLine() {

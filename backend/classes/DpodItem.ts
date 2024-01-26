@@ -26,16 +26,17 @@ export class DpodItem {
 		const fieldLines = this.lineBlock.getAllLinesButFirst();
 		if (this.dpodSchema) {
 			let index = -1;
+			console.log(111, fieldLines);
 			for (const _dataType of _dataTypes) {
 				// const __dataType = new DataType(_dataType.getLabel());
 				const creationLine = _dataType.getLabel() + ';' + _dataType.getDataTypeIdCode();
-				console.log('111', creationLine);
 				const __dataType = Factory.instantiateDataType(creationLine);
 				if (index >= 0) {
 					let fieldLine = fieldLines[index];
 					if (fieldLine === '[[') {
 						let innerContent = '';
 						let innerFieldLine = '';
+						console.log(fieldLine);
 						while (innerFieldLine !== ']]') {
 							innerContent += innerFieldLine + '\n';
 							index++;
