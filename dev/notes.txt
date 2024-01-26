@@ -12,7 +12,7 @@
 	- Runs page: display all runs, with photos
 	- Fitness page: overview of runs, swims, weight	
 
-
 - future todos:
+	- read file from etsite, make configurable 
 	- decimal and wholeNumber extend number
 	- be able to put a paragraph field at the end (didn't work)
