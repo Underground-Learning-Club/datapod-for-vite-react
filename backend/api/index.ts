@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import express from 'express';
 import cors from 'cors';
@@ -35,7 +36,14 @@ app.get('/appdata', (_req, res) => {
 });
 
 app.get('/parse-etsite-data', (req, res) => {
-	console.log('in backend');
+	const pathAndFileNames = qfil.getFileNamesInDirectory(appconfig.importDirectory());
+	const fileObjects = apptools.getFileObjects(pathAndFileNames);
+	const entireContent = apptools.getEntireContent(fileObjects);
+	const dpodDataLoader = new DpodDataLoader(entireContent);
+	const dataItems = dpodDataLoader.getDpodItemGroupDataItems()
+	console.log(dataItems); 
+	apptools.createFile('./export/itemType-runs.json', (apptools.wrapAsArrayForJson((dataItems[0] as any).jsonData)));
+
 	res.status(200);
 })
 

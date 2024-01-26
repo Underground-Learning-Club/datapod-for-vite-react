@@ -4,8 +4,7 @@
 	- x switch to concurrently
 	- x be able to switch locally
 	- x save wholeNumber and decimal as numbers, not strings
-	- .. make a button on datapod welcome page: "Parse site data for edward-tanguay-eu site"
-	- on edward-tanguay-eu site, make three files: runs, swims, weights
+	- x make a button on datapod welcome page: "Parse site data for edward-tanguay-eu site"
 	- .. read in from edward-tanguay-eu site: site.dpod.txt
 		- enable //
 		- copy manually to .json files
