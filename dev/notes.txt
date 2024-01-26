@@ -1,9 +1,12 @@
-- x add paragraph type so it shows as a datapod type
-- x read all lines between [[]] as a field
-- .. adjust all output formats
-	- x table
-	- .. json
-	- csv
-	- xml
-	- datapod
-
+- x planning
+- .. (1) be able to record runs/swims/weight in edward-tanguay-eu site project, press button in datapod-vite-react-core, three JSON files are created in edward-tanguay-eu site
+	- .. delete all configs
+	- .. switch to concurrently
+	- .. be able to switch locally
+	- .. read in from edward-tanguay-eu site: site.dpod.txt
+		- enable //
+		- copy manually to .json files
+	- make a button on datapod welcome page: "Parse site data for edward-tanguay-eu site"
+- (2) display information on edward-tanguay-eu site
+	- Runs page: display all runs, with photos
+	- Fitness page: overview of runs, swims, weight	
