@@ -6,6 +6,47 @@ Kilometers
 Duration
 Body;p
 
+
+==run 
+20240127
+7K Lankwitz Loop
+2024-01-26
+7
+00:42:18
+[[
+Felt better last run on Monday, today was Friday a day after power gymnastics so legs a bit sore, but had a relatively strong run. Beat Monday's time by over a minute with a 6:03 pace, so coming down under a 30-minute 5K, which is nice for so early in the year. Snow and ice were luckily completely gone, nice night running.
+
+##fffmain
+
+##fffsky
+
+##fffgarage
+
+##fffcars
+
+##fffdusk
+
+##fffhosp
+
+##fffgraff
+
+##fffbikes
+
+##ffflook
+
+##fffgas
+
+##fffunder
+
+##fffcorner
+
+##ffflank
+
+##fffleaves
+
+##fffwatch
+]]
+
 ==run 
 20240103
 7K Lankwitz Loop
