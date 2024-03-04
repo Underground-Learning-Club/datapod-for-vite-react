@@ -6,6 +6,101 @@ Kilometers
 Duration
 Body;p
 
+==run
+20240214
+7K Lankwitz Loop
+2024-02-14
+7
+nn
+[[
+Got out at 17:00, was dark before finished. Was pushing off strong but at times ran out of energy, but still best time this year for 7K: 39:07.
+]]
+
+
+==run
+20240212
+7K Lankwitz Loop
+2024-02-12
+7
+nn
+[[
+Felt strong than most runs so far this year.
+]]
+
+
+==run
+20240210
+10K Lankwitz Loop with Gisi
+2024-02-10
+10
+nn
+[[
+Got out the door about 15:00, first time with short pants, cool and nice running, slow pace with Gisi, lots of mud puddles.
+]]
+
+==run 
+20240203
+10K Lankwitz Loop
+2024-02-03
+10
+00:59:36
+[[
+This was my first run of February and first 10K this year, finished under an hour and five minutes faster than my 10K last month. Light rain and overcast but also the first run this year finished while it was still light. Hoping for 10-15 runs this month.
+
+##undfoot
+
+##undcar
+
+##undtheout
+
+##undchase
+
+##undpass
+
+##undblurstar
+
+##undcoversad
+
+##undgoingjsin
+
+##undsomeblu
+
+##undturnturn
+
+##undostprues
+
+##undkampfen
+
+##undgoinsfdodwn
+
+##undwatshdfit
+
+##undstumpgrowjs
+
+##undowndjisjd
+
+##undkanaldkjf
+
+##undcxurvabuild
+
+##undstrighsdown
+
+##undbicysjjkds
+
+##undthrousdkjf
+
+##undglockckck
+
+##undthroughgit
+
+##undbetksdjfkj
+
+##unddfinsfisj
+
+##undoverkananan
+
+##undtimesadf
+]]
 
 ==run 
 20240127
@@ -185,6 +280,20 @@ Laps;wn
 1
 40
 
+==swim
+2024-01-27
+1
+40
+
+==swim
+2024-02-03
+1
+40
+
+==swim
+2024-02-10
+1
+40
 
 ** Weights
 Date
@@ -213,4 +322,8 @@ Kilograms;dec
 ==weight
 2024-01-26
 85.9
+
+==weight
+2024-01-27
+86.7
 
