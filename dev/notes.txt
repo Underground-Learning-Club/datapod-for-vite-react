@@ -16,3 +16,5 @@
 	- read file from etsite, make configurable 
 	- decimal and wholeNumber extend number
 	- be able to put a paragraph field at the end (didn't work)
+
+- test
